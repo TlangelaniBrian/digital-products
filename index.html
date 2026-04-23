@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hustle Digital — Premium AI Prompts, Templates & Systems</title>
+  <meta name="description" content="Premium AI prompt packs, Notion systems, and legal templates for founders, recruiters, and agencies. Instantly downloadable. One-time payment. No subscriptions." />
+  <meta name="keywords" content="AI prompts, ChatGPT prompts, Notion templates, SaaS tools, founder resources, recruiter tools, digital products" />
+  <meta name="author" content="Hustle Digital" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tlangelanibrian.github.io/digital-products/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tlangelanibrian.github.io/digital-products/" />
+  <meta property="og:title" content="Hustle Digital — Premium AI Prompts & Templates" />
+  <meta property="og:description" content="Instantly downloadable AI prompt packs, Notion systems, and legal templates for founders, recruiters, and agencies. One-time payment." />
+  <meta property="og:image" content="https://tlangelanibrian.github.io/digital-products/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hustle Digital — Premium AI Prompts & Templates" />
+  <meta name="twitter:description" content="AI prompt packs, Notion systems, and legal templates. Instantly downloadable. One-time payment." />
+  <meta name="twitter:image" content="https://tlangelanibrian.github.io/digital-products/og-image.png" />
+
+  <!-- JSON-LD Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Hustle Digital",
+        "url": "https://tlangelanibrian.github.io/digital-products/",
+        "description": "Premium digital products for founders, recruiters, and agencies"
+      },
+      {
+        "@type": "Product",
+        "name": "SaaS Founder's AI Playbook",
+        "description": "150 battle-tested ChatGPT prompts covering fundraising, product strategy, growth, hiring, and investor communications.",
+        "offers": {
+          "@type": "Offer",
+          "price": "39.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://tlangelanibrian.github.io/digital-products/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "The AI Recruiter's Toolkit",
+        "description": "100 prompts for talent acquisition professionals covering sourcing, screening, outreach, and pipeline management.",
+        "offers": {
+          "@type": "Offer",
+          "price": "29.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://tlangelanibrian.github.io/digital-products/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Digital Agency AI Ops Pack",
+        "description": "120 prompts for digital agencies covering client onboarding, copywriting, reporting, and project management.",
+        "offers": {
+          "@type": "Offer",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://tlangelanibrian.github.io/digital-products/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Notion Business OS 2025",
+        "description": "A complete Notion workspace system for growing businesses — CRM, project tracker, hiring pipeline, and financial dashboard.",
+        "offers": {
+          "@type": "Offer",
+          "price": "49.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://tlangelanibrian.github.io/digital-products/"
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "SaaS Legal Template Pack",
+        "description": "Six attorney-drafted legal templates for SaaS businesses: Terms of Service, Privacy Policy, DPA, SLA, NDA, and MSA.",
+        "offers": {
+          "@type": "Offer",
+          "price": "79.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://tlangelanibrian.github.io/digital-products/"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080810;
+      --bg-card: rgba(255,255,255,0.04);
+      --bg-card-hover: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(139,92,246,0.5);
+      --text: #f0eeff;
+      --muted: #9090aa;
+      --accent: #8b5cf6;
+      --accent-2: #06b6d4;
+      --gradient: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      --gradient-text: linear-gradient(90deg, #a78bfa, #22d3ee);
+      --radius: 16px;
+      --radius-sm: 8px;
+      --shadow: 0 0 40px rgba(139,92,246,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Ambient glow ── */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(8,8,16,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 100px 24px 80px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(139,92,246,0.3);
+      background: rgba(139,92,246,0.08);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--gradient);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 0 32px rgba(139,92,246,0.35);
+    }
+
+    .hero-cta:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* ── STATS BAR ── */
+    .stats {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      max-width: 700px;
+      margin: 0 auto 90px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      padding: 24px 20px;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* ── SECTION ── */
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* ── PRODUCT GRID ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s;
+      border-radius: var(--radius);
+      z-index: 0;
+    }
+
+    .product-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-card > * { position: relative; z-index: 1; }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      border: 1px solid rgba(6,182,212,0.3);
+      background: rgba(6,182,212,0.08);
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+      line-height: 1.55;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .card-features li {
+      font-size: 0.83rem;
+      color: #c0c0d8;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .card-features li::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 0.6rem;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-buy {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      background: var(--gradient);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 0 20px rgba(139,92,246,0.3);
+    }
+
+    .btn-buy:hover { opacity: 0.88; transform: scale(1.04); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: #0e0e1c;
+      border: 1px solid rgba(139,92,246,0.35);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 0 60px rgba(139,92,246,0.2);
+      animation: modal-in 0.25s ease;
+    }
+
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover { color: var(--text); }
+
+    .modal h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .modal-price {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .modal-steps {
+      background: rgba(139,92,246,0.07);
+      border: 1px solid rgba(139,92,246,0.18);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+
+    .modal-steps h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .modal-steps ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .modal-steps li {
+      font-size: 0.9rem;
+      color: #c0c0d8;
+      line-height: 1.5;
+    }
+
+    .modal-steps li strong { color: var(--text); }
+
+    .modal-steps .email-highlight {
+      display: inline-block;
+      background: rgba(6,182,212,0.12);
+      border: 1px solid rgba(6,182,212,0.25);
+      color: var(--accent-2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.88em;
+    }
+
+    .btn-paypal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: #0070ba;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-paypal:hover { background: #005ea6; transform: translateY(-1px); }
+
+    .modal-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .trust-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .trust-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #c0c0d8;
+    }
+
+    .trust-list li .icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(139,92,246,0.15);
+      border: 1px solid rgba(139,92,246,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .about-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .about-stat-card .number {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .about-stat-card .label {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    footer a { color: var(--accent-2); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 20px; }
+
+      .hero { padding: 72px 20px 60px; }
+
+      .stats { margin-bottom: 64px; }
+      .stat { min-width: 120px; padding: 18px 14px; }
+      .stat-value { font-size: 1.2rem; }
+
+      section { padding: 0 16px 72px; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { grid-template-columns: 1fr 1fr; }
+
+      .modal { padding: 28px 22px; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+      .stats { flex-direction: column; border-radius: var(--radius-sm); }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Hustle Digital</a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="mailto:mrbtmkhabela@gmail.com">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-eyebrow">Trusted by 1,000+ professionals worldwide</span>
+    <h1>Premium AI Prompts, Templates &amp; Systems for Professionals</h1>
+    <p>Instantly downloadable. One-time payment. No subscriptions. Everything you need to move faster and look sharper.</p>
+    <a href="#products" class="hero-cta">Browse Products →</a>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-value">10,000+</span>
+      <span class="stat-label">Prompts written</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">★ 5.0</span>
+      <span class="stat-label">Star rated</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">&lt; 1 hr</span>
+      <span class="stat-label">Instant delivery</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="section-header">
+      <h2>Ready-to-Use Digital Products</h2>
+      <p>Professionally crafted. Instantly actionable. No fluff.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Card 1 -->
+      <div class="product-card">
+        <span class="card-tag">For Founders</span>
+        <h3 class="card-title">SaaS Founder's AI Playbook</h3>
+        <p class="card-desc">150 battle-tested ChatGPT prompts covering every stage of building your SaaS company.</p>
+        <ul class="card-features">
+          <li>Fundraising pitch &amp; investor outreach</li>
+          <li>Product strategy &amp; roadmap prompts</li>
+          <li>Growth hacking &amp; go-to-market</li>
+          <li>Hiring scripts &amp; team communications</li>
+          <li>150 prompts across 12 categories</li>
+        </ul>
+        <div class="card-footer">
+          <span class="card-price">$39</span>
+          <button class="btn-buy" onclick="openModal('SaaS Founder\'s AI Playbook', '$39', 'https://paypal.me/mrbtmkhabela/39USD')">
+            Buy Now ↗
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <span class="card-tag">For Recruiters</span>
+        <h3 class="card-title">The AI Recruiter's Toolkit</h3>
+        <p class="card-desc">100 prompts for talent acquisition professionals — sourcing to offer in record time.</p>
+        <ul class="card-features">
+          <li>Boolean search strings &amp; sourcing</li>
+          <li>Personalised outreach message templates</li>
+          <li>Interview question generation</li>
+          <li>Pipeline management &amp; reporting</li>
+          <li>100 prompts across 10 categories</li>
+        </ul>
+        <div class="card-footer">
+          <span class="card-price">$29</span>
+          <button class="btn-buy" onclick="openModal('The AI Recruiter\'s Toolkit', '$29', 'https://paypal.me/mrbtmkhabela/29USD')">
+            Buy Now ↗
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <span class="card-tag">For Agencies</span>
+        <h3 class="card-title">Digital Agency AI Ops Pack</h3>
+        <p class="card-desc">120 prompts to run your digital agency like a well-oiled machine — client to delivery.</p>
+        <ul class="card-features">
+          <li>Client onboarding &amp; discovery calls</li>
+          <li>Copywriting &amp; content production</li>
+          <li>Campaign reporting &amp; analysis</li>
+          <li>Proposal writing &amp; scope docs</li>
+          <li>120 prompts across 8 categories</li>
+        </ul>
+        <div class="card-footer">
+          <span class="card-price">$49</span>
+          <button class="btn-buy" onclick="openModal('Digital Agency AI Ops Pack', '$49', 'https://paypal.me/mrbtmkhabela/49USD')">
+            Buy Now ↗
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <span class="card-tag">Notion System</span>
+        <h3 class="card-title">Notion Business OS 2025</h3>
+        <p class="card-desc">A complete Notion workspace system for serious operators — built for speed and scale.</p>
+        <ul class="card-features">
+          <li>Full CRM with pipeline stages</li>
+          <li>Project &amp; task tracker (Agile-ready)</li>
+          <li>Hiring pipeline &amp; applicant tracker</li>
+          <li>Financial dashboard &amp; goal tracker</li>
+          <li>100+ pre-built pages &amp; templates</li>
+        </ul>
+        <div class="card-footer">
+          <span class="card-price">$49</span>
+          <button class="btn-buy" onclick="openModal('Notion Business OS 2025', '$49', 'https://paypal.me/mrbtmkhabela/49USD')">
+            Buy Now ↗
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card" style="grid-column: span 1;">
+        <span class="card-tag">Legal Templates</span>
+        <h3 class="card-title">SaaS Legal Template Pack</h3>
+        <p class="card-desc">Six essential legal documents every SaaS business needs — drafted in plain, enforceable language.</p>
+        <ul class="card-features">
+          <li>Terms of Service &amp; Privacy Policy</li>
+          <li>Data Processing Agreement (DPA)</li>
+          <li>Service Level Agreement (SLA)</li>
+          <li>NDA &amp; Master Service Agreement (MSA)</li>
+          <li>GDPR &amp; CCPA compliant drafts</li>
+        </ul>
+        <div class="card-footer">
+          <span class="card-price">$79</span>
+          <button class="btn-buy" onclick="openModal('SaaS Legal Template Pack', '$79', 'https://paypal.me/mrbtmkhabela/79USD')">
+            Buy Now ↗
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-content">
+        <h2>Built for professionals who move fast</h2>
+        <p>Hustle Digital creates premium digital products designed to give serious professionals an unfair advantage. Every prompt, template, and system is built from real-world experience — not theory.</p>
+        <p>One-time payment. Instant delivery. No subscriptions, no lock-in. Just tools that work.</p>
+        <ul class="trust-list">
+          <li><span class="icon">✓</span> Instant download after payment confirmation</li>
+          <li><span class="icon">✓</span> One-time payment — own it forever</li>
+          <li><span class="icon">✓</span> Delivered via email within 1 hour</li>
+          <li><span class="icon">✓</span> Secure PayPal checkout</li>
+        </ul>
+      </div>
+      <div class="about-visual">
+        <div class="about-stat-card">
+          <span class="number">5</span>
+          <span class="label">Products available</span>
+        </div>
+        <div class="about-stat-card">
+          <span class="number">470+</span>
+          <span class="label">Prompts &amp; templates</span>
+        </div>
+        <div class="about-stat-card">
+          <span class="number">$0</span>
+          <span class="label">Monthly fees</span>
+        </div>
+        <div class="about-stat-card">
+          <span class="number">&lt;1hr</span>
+          <span class="label">Delivery time</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Hustle Digital</div>
+    <ul class="footer-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="download.html">Download Instructions</a></li>
+      <li><a href="mailto:mrbtmkhabela@gmail.com">Contact</a></li>
+    </ul>
+    <p>
+      Questions? Email <a href="mailto:mrbtmkhabela@gmail.com">mrbtmkhabela@gmail.com</a><br />
+      All products are digital downloads. No refunds. Secure payments via PayPal.
+    </p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" onclick="closeModalOnOverlay(event)">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <h3 id="modal-title"></h3>
+      <span class="modal-price" id="modal-price"></span>
+
+      <div class="modal-steps">
+        <h4>How to receive your product</h4>
+        <ol>
+          <li><strong>Click the PayPal button below</strong> to complete your payment securely.</li>
+          <li>After payment, <strong>copy your PayPal Transaction ID</strong> from your confirmation email.</li>
+          <li>Email us at <span class="email-highlight">mrbtmkhabela@gmail.com</span> with the subject line: <strong>"Order: [Product Name]"</strong></li>
+          <li>Include your <strong>PayPal Transaction ID</strong> and the product name in the email.</li>
+          <li>We'll send your download link within <strong>1 hour</strong>.</li>
+        </ol>
+      </div>
+
+      <a class="btn-paypal" id="modal-paypal-btn" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.144 19.532l1.049-5.751c.11-.498.561-.849 1.09-.849h6.738c2.842 0 4.965-1.346 5.48-4.157.513-2.806-1.007-4.188-3.854-4.188H10.75a1.12 1.12 0 0 0-1.104.943L7.144 19.532zm7.57-11.12c.386 0 .735.045 1.04.137 1.024.313 1.47 1.18 1.27 2.306-.234 1.32-1.185 2.025-2.476 2.025h-2.54l.706-4.468h2z"/></svg>
+        Pay with PayPal
+      </a>
+      <p class="modal-note">You'll be redirected to PayPal's secure checkout. After payment, email us your transaction ID to receive your download link.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(name, price, paypalUrl) {
+      document.getElementById('modal-title').textContent = name;
+      document.getElementById('modal-price').textContent = price;
+      document.getElementById('modal-paypal-btn').href = paypalUrl;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(e) {
+      if (e.target === document.getElementById('modal')) closeModal();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
