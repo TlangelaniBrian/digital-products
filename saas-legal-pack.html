@@ -1,0 +1,2005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS Legal Template Pack — $79</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #09090b;
+    --surface: #18181b;
+    --surface2: #27272a;
+    --border: #3f3f46;
+    --accent: #8b5cf6;
+    --accent-dim: #6d28d9;
+    --accent-glow: rgba(139,92,246,0.15);
+    --text: #fafafa;
+    --muted: #a1a1aa;
+    --green: #22c55e;
+    --amber: #f59e0b;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --sidebar-width: 300px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: var(--sidebar-width);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-header {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .sidebar-logo .icon {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .sidebar-logo .name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .sidebar-logo .name span {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 11px;
+  }
+
+  .price-badge {
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  .search-box {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .search-wrap { position: relative; }
+
+  .search-wrap::before {
+    content: '⌕';
+    position: absolute;
+    left: 10px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 16px;
+    z-index: 1;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px 8px 34px;
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+  }
+
+  .search-box input:focus { border-color: var(--accent); }
+
+  .nav { flex: 1; padding: 12px; overflow-y: auto; }
+
+  .nav-section { margin-bottom: 4px; }
+
+  .nav-section-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 8px 8px 4px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    background: var(--accent-glow);
+    color: var(--text);
+  }
+
+  .nav-link.active { color: var(--accent); }
+
+  .nav-link .emoji { font-size: 14px; width: 20px; text-align: center; }
+
+  .sidebar-cta {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .buy-btn {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+  }
+
+  .buy-btn:hover { background: var(--accent-dim); transform: translateY(-1px); }
+
+  /* MAIN */
+  .main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    max-width: 900px;
+    padding: 48px 48px 80px;
+  }
+
+  /* HERO */
+  .hero {
+    margin-bottom: 56px;
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--text) 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p { color: var(--muted); font-size: 16px; max-width: 560px; margin-bottom: 28px; }
+
+  .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+
+  .stat { text-align: center; }
+  .stat .num { font-size: 24px; font-weight: 800; color: var(--accent); display: block; }
+  .stat .label { font-size: 12px; color: var(--muted); }
+
+  /* DISCLAIMER */
+  .disclaimer {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.3);
+    border-left: 4px solid var(--amber);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin-bottom: 40px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .disclaimer strong { color: var(--amber); display: block; margin-bottom: 6px; font-size: 14px; }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 72px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon {
+    width: 44px; height: 44px;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 { font-size: 24px; font-weight: 700; }
+  .section-header .section-meta { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* TEMPLATE BLOCK */
+  .template-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .template-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .template-header-left { display: flex; align-items: center; gap: 10px; }
+
+  .template-header h3 { font-size: 15px; font-weight: 600; }
+
+  .template-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .copy-all-btn {
+    background: var(--accent);
+    border: none;
+    border-radius: 7px;
+    padding: 7px 16px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .copy-all-btn:hover { background: var(--accent-dim); }
+  .copy-all-btn.copied { background: #16a34a; }
+
+  .template-body {
+    padding: 0;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #d4d4d8;
+  }
+
+  /* CLAUSES */
+  .clause {
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+
+  .clause:last-child { border-bottom: none; }
+
+  .clause-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.1s;
+  }
+
+  .clause-header:hover { background: rgba(255,255,255,0.02); }
+
+  .clause-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .clause-num {
+    width: 22px; height: 22px;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .clause-toggle {
+    color: var(--muted);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+
+  .clause-toggle.open { transform: rotate(180deg); }
+
+  .clause-body {
+    padding: 0 20px 20px;
+    display: none;
+  }
+
+  .clause-body.open { display: block; }
+
+  .clause-text {
+    background: #0d0d10;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-family: 'Georgia', serif;
+    font-size: 13.5px;
+    line-height: 1.9;
+    color: #d4d4d8;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    position: relative;
+  }
+
+  .clause-annotation {
+    background: rgba(139,92,246,0.06);
+    border: 1px solid rgba(139,92,246,0.2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+
+  .clause-annotation strong { color: var(--accent); }
+
+  .clause-copy-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 12px;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    float: right;
+    margin-bottom: 8px;
+  }
+
+  .clause-copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .clause-copy-btn.copied { border-color: var(--green); color: var(--green); }
+
+  /* INFO BOX */
+  .info-box {
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.25);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 0 20px 16px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .info-box strong { color: #93c5fd; }
+
+  /* TIPS */
+  .tip {
+    background: rgba(139,92,246,0.08);
+    border: 1px solid rgba(139,92,246,0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .tip strong { color: var(--accent); }
+
+  /* SEARCH HIDDEN */
+  .search-hidden { display: none !important; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="icon">⚖️</div>
+      <div class="name">
+        SaaS Legal Pack
+        <span>6 Professional Templates</span>
+      </div>
+    </div>
+    <span class="price-badge">$79 One-Time</span>
+  </div>
+
+  <div class="search-box">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search templates..." oninput="doSearch(this.value)">
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a class="nav-link active" onclick="scrollTo('hero')">
+        <span class="emoji">🏠</span> Introduction
+      </a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Customer-Facing</div>
+      <a class="nav-link" onclick="scrollTo('tos')">
+        <span class="emoji">📄</span> Terms of Service
+      </a>
+      <a class="nav-link" onclick="scrollTo('privacy')">
+        <span class="emoji">🔒</span> Privacy Policy
+      </a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">B2B & Data</div>
+      <a class="nav-link" onclick="scrollTo('dpa')">
+        <span class="emoji">🛡️</span> Data Processing Agreement
+      </a>
+      <a class="nav-link" onclick="scrollTo('sla')">
+        <span class="emoji">⏱️</span> Service Level Agreement
+      </a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Partnerships</div>
+      <a class="nav-link" onclick="scrollTo('nda')">
+        <span class="emoji">🤝</span> Mutual NDA
+      </a>
+      <a class="nav-link" onclick="scrollTo('msa')">
+        <span class="emoji">📋</span> Master Service Agreement
+      </a>
+    </div>
+  </nav>
+
+  <div class="sidebar-cta">
+    <a href="https://paypal.me/mrbtmkhabela/79USD" target="_blank" class="buy-btn">
+      💳 Get Full Pack — $79
+    </a>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-badge">✦ 6 Templates &bull; Fully Written &bull; GDPR + CCPA Ready</div>
+    <h1>SaaS Legal Template Pack</h1>
+    <p>Professional legal templates for SaaS founders. Fully written in plain professional English — not placeholder soup. Adapt with your lawyer, ship with confidence.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">6</span><span class="label">Templates</span></div>
+      <div class="stat"><span class="num">50+</span><span class="label">Clauses</span></div>
+      <div class="stat"><span class="num">GDPR</span><span class="label">+ CCPA Ready</span></div>
+      <div class="stat"><span class="num">99.9%</span><span class="label">SLA Included</span></div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer" id="disclaimer">
+    <strong>⚠️ Legal Disclaimer — Please Read</strong>
+    These templates are starting-point drafts for educational and reference purposes only. They do not constitute legal advice and do not create an attorney-client relationship. Laws vary significantly by jurisdiction, industry, and business model. You must have a qualified lawyer review and adapt any template before using it in your business. The author and publisher accept no liability for decisions made based on these templates.
+  </div>
+
+  <!-- TERMS OF SERVICE -->
+  <section class="section" id="tos">
+    <div class="section-header">
+      <div class="section-icon">📄</div>
+      <div>
+        <h2>Terms of Service</h2>
+        <div class="section-meta">15 clauses — Acceptance, accounts, payments, IP, liability, DMCA, termination</div>
+      </div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-header">
+        <div class="template-header-left">
+          <div>
+            <h3>Terms of Service Agreement</h3>
+            <div class="template-meta">15 clauses &bull; B2C and B2B SaaS &bull; Adapt company name and jurisdiction</div>
+          </div>
+        </div>
+        <button class="copy-all-btn" onclick="copyFullTemplate('tos-full')">Copy Full Template</button>
+      </div>
+
+      <div class="info-box">
+        <strong>When to use:</strong> Every SaaS product needs Terms of Service. Make this the first legal document you publish. Link it in your footer, signup flow, and checkout page.
+      </div>
+
+      <div id="tos-full" style="display:none;">
+TERMS OF SERVICE
+
+Last Updated: [DATE]
+
+PLEASE READ THESE TERMS OF SERVICE ("TERMS") CAREFULLY BEFORE USING [COMPANY NAME] (THE "SERVICE"). BY ACCESSING OR USING THE SERVICE, YOU AGREE TO BE BOUND BY THESE TERMS.
+
+1. ACCEPTANCE OF TERMS
+
+By creating an account, accessing, or using [Company Name] ("Service," "we," "us," or "our"), you ("User" or "you") agree to be bound by these Terms of Service and our Privacy Policy, which is incorporated herein by reference. If you are using the Service on behalf of a company or other legal entity, you represent that you have the authority to bind that entity to these Terms, in which case "you" refers to that entity. If you do not agree to these Terms, you may not use the Service.
+
+2. ELIGIBILITY AND ACCOUNTS
+
+You must be at least 18 years old (or the age of legal majority in your jurisdiction) to use the Service. By using the Service, you represent and warrant that you meet this requirement. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately at [support@company.com] if you suspect any unauthorised access to your account. We reserve the right to terminate accounts that violate these Terms.
+
+3. PAYMENT AND SUBSCRIPTIONS
+
+(a) Fees: Access to certain features of the Service requires payment of fees as described on our pricing page. All fees are stated in US dollars unless otherwise indicated.
+
+(b) Billing: By providing payment information, you authorise us to charge you for the Service on a recurring basis (monthly or annual, as selected). Charges are billed in advance.
+
+(c) Refunds: Subscription fees are non-refundable except as required by applicable law or as expressly stated in our Refund Policy. We may provide pro-rata refunds at our sole discretion for annual plans cancelled within 30 days of purchase.
+
+(d) Price Changes: We may change our pricing with 30 days' notice. Continued use of the Service after a price change constitutes acceptance of the new pricing.
+
+(e) Taxes: You are responsible for all applicable taxes, and we will charge tax where required by law.
+
+4. ACCEPTABLE USE
+
+You agree not to: (a) violate any applicable laws or regulations; (b) infringe the intellectual property rights of others; (c) transmit malware, viruses, or harmful code; (d) attempt to gain unauthorised access to any part of the Service or its related systems; (e) use the Service to send unsolicited commercial messages (spam); (f) reverse engineer, decompile, or disassemble the Service; (g) use the Service to store or transmit illegal content; (h) resell or sublicence the Service without our written permission; or (i) interfere with the Service's integrity or performance.
+
+5. INTELLECTUAL PROPERTY
+
+(a) Our IP: The Service and all its components, including software, designs, text, graphics, and data, are owned by [Company Name] or its licensors and protected by copyright, trademark, and other intellectual property laws. These Terms grant you no rights in our intellectual property except the limited licence to use the Service as described herein.
+
+(b) Your Content: You retain ownership of all content, data, and materials you upload or create using the Service ("User Content"). By submitting User Content, you grant us a non-exclusive, worldwide, royalty-free licence to host, process, and display your User Content solely as necessary to provide the Service.
+
+(c) Feedback: If you submit suggestions or feedback about the Service, we may use it without restriction or compensation to you.
+
+6. DATA AND PRIVACY
+
+We process your personal data in accordance with our Privacy Policy, available at [privacy policy URL]. By using the Service, you consent to such processing and warrant that all data you provide is accurate. For customers subject to GDPR or CCPA, additional rights and obligations are described in our Privacy Policy and, for business customers, our Data Processing Agreement.
+
+7. CONFIDENTIALITY
+
+Each party may disclose confidential information to the other in connection with the Service. Each party agrees to: (a) maintain the confidentiality of the other party's confidential information using at least the same standard of care it uses for its own confidential information, but no less than reasonable care; (b) not disclose such information to third parties without prior written consent; and (c) use such information only for purposes of fulfilling obligations under these Terms.
+
+8. THIRD-PARTY SERVICES
+
+The Service may integrate with or link to third-party services. We do not control and are not responsible for the content, policies, or practices of any third-party service. Your use of third-party services is governed by their respective terms of service and privacy policies.
+
+9. DISCLAIMER OF WARRANTIES
+
+THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+
+10. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, [COMPANY NAME] SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR YOUR USE OF THE SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY TO YOU FOR ANY CLAIMS ARISING UNDER THESE TERMS SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM OR (B) ONE HUNDRED US DOLLARS ($100).
+
+11. DMCA AND COPYRIGHT COMPLAINTS
+
+We respect intellectual property rights. If you believe content on the Service infringes your copyright, send a notice to [dmca@company.com] including: (a) a description of the copyrighted work; (b) a description of the infringing material and its location; (c) your contact information; (d) a statement of good faith belief that the use is not authorised; and (e) a statement of accuracy under penalty of perjury.
+
+12. TERMINATION
+
+(a) By You: You may terminate your account at any time by following the cancellation instructions in your account settings. Termination takes effect at the end of your current billing period.
+
+(b) By Us: We may suspend or terminate your access immediately, with or without notice, if we believe you have violated these Terms, if required by law, or to protect the integrity of the Service.
+
+(c) Effect of Termination: Upon termination, your licence to use the Service ends. We may delete your data 30 days after termination unless we are required by law to retain it. Sections 5, 9, 10, 12, and 14 survive termination.
+
+13. MODIFICATIONS TO TERMS
+
+We may modify these Terms at any time. We will provide at least 14 days' notice of material changes via email or a notice within the Service. Your continued use of the Service after the effective date constitutes acceptance of the revised Terms. If you do not agree to the changes, you must stop using the Service and may request a pro-rata refund of prepaid fees.
+
+14. GOVERNING LAW AND DISPUTES
+
+These Terms are governed by the laws of [Jurisdiction, e.g., "the State of Delaware, United States"] without regard to conflict of law provisions. Any dispute arising from these Terms shall first be subject to good-faith negotiation. If unresolved within 30 days, disputes shall be resolved by binding arbitration in accordance with the rules of [arbitration body], except that either party may seek injunctive relief in a court of competent jurisdiction. YOU WAIVE THE RIGHT TO PARTICIPATE IN CLASS ACTION LAWSUITS.
+
+15. GENERAL PROVISIONS
+
+(a) Entire Agreement: These Terms, together with the Privacy Policy and any additional terms you agree to, constitute the entire agreement between you and [Company Name] regarding the Service.
+
+(b) Severability: If any provision of these Terms is found invalid or unenforceable, it will be modified to the minimum extent necessary to make it enforceable, and the remaining provisions will remain in full force.
+
+(c) Waiver: Our failure to enforce any provision shall not constitute a waiver of our rights.
+
+(d) Assignment: You may not assign your rights under these Terms. We may assign our rights to a successor in connection with a merger, acquisition, or sale of assets.
+
+(e) Contact: [Company Name], [Address], [Email], [Phone].
+      </div>
+
+      <!-- CLAUSES -->
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">1</span> Acceptance of Terms</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">PLEASE READ THESE TERMS OF SERVICE ("TERMS") CAREFULLY BEFORE USING [COMPANY NAME] (THE "SERVICE"). BY ACCESSING OR USING THE SERVICE, YOU AGREE TO BE BOUND BY THESE TERMS.
+
+By creating an account, accessing, or using [Company Name] ("Service," "we," "us," or "our"), you ("User" or "you") agree to be bound by these Terms of Service and our Privacy Policy, which is incorporated herein by reference. If you are using the Service on behalf of a company or other legal entity, you represent that you have the authority to bind that entity to these Terms, in which case "you" refers to that entity. If you do not agree to these Terms, you may not use the Service.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Establishes the contract formation moment. "Browsewrap" (just visiting) is weaker than "clickwrap" (explicit checkbox). Consider adding a checkbox at signup saying "I agree to the Terms of Service" for stronger enforceability. Replace [Company Name] with your legal entity name.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">2</span> Eligibility and Accounts</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">You must be at least 18 years old (or the age of legal majority in your jurisdiction) to use the Service. By using the Service, you represent and warrant that you meet this requirement. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately at [support@company.com] if you suspect any unauthorised access to your account. We reserve the right to terminate accounts that violate these Terms.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Establishes age restrictions (critical for COPPA compliance in the US) and places responsibility for account security on the user. If your product targets children or could be used by minors, you need specialised legal advice — COPPA has strict requirements. Replace [support@company.com] with your actual support email.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">3</span> Payment and Subscriptions</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">(a) Fees: Access to certain features of the Service requires payment of fees as described on our pricing page. All fees are stated in US dollars unless otherwise indicated.
+
+(b) Billing: By providing payment information, you authorise us to charge you on a recurring basis (monthly or annual, as selected). Charges are billed in advance.
+
+(c) Refunds: Subscription fees are non-refundable except as required by applicable law or as expressly stated in our Refund Policy. We may provide pro-rata refunds at our sole discretion for annual plans cancelled within 30 days of purchase.
+
+(d) Price Changes: We may change our pricing with 30 days' notice. Continued use of the Service after a price change constitutes acceptance of the new pricing.
+
+(e) Taxes: You are responsible for all applicable taxes, and we will charge tax where required by law.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Covers the commercial relationship. EU consumer law may require mandatory refund rights — consult a lawyer if you sell to EU consumers. Your refund policy should be consistent with what your payment processor (Stripe, PayPal, etc.) supports. Consider a more generous refund policy as a business differentiator.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">4</span> Acceptable Use Policy</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">You agree not to: (a) violate any applicable laws or regulations; (b) infringe the intellectual property rights of others; (c) transmit malware, viruses, or harmful code; (d) attempt to gain unauthorised access to any part of the Service or its related systems; (e) use the Service to send unsolicited commercial messages (spam); (f) reverse engineer, decompile, or disassemble the Service; (g) use the Service to store or transmit illegal content; (h) resell or sublicence the Service without our written permission; or (i) interfere with the Service's integrity or performance.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Defines prohibited behaviours that give you grounds for termination. Customise this list for your specific product. If you offer an API, add provisions about rate limiting and automated access. If your product is in a regulated industry (fintech, health), add industry-specific restrictions.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">5</span> Intellectual Property Rights</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">(a) Our IP: The Service and all its components, including software, designs, text, graphics, and data, are owned by [Company Name] or its licensors and protected by copyright, trademark, and other intellectual property laws. These Terms grant you no rights in our intellectual property except the limited licence to use the Service as described herein.
+
+(b) Your Content: You retain ownership of all content, data, and materials you upload or create using the Service ("User Content"). By submitting User Content, you grant us a non-exclusive, worldwide, royalty-free licence to host, process, and display your User Content solely as necessary to provide the Service.
+
+(c) Feedback: If you submit suggestions or feedback about the Service, we may use it without restriction or compensation to you.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Protects your IP while ensuring users keep ownership of their data. The licence to host User Content is essential — without it, technically you can't store users' files. The feedback clause prevents users from claiming ownership of features you build based on their suggestions. This is critical for SaaS products.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">6</span> Data and Privacy</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We process your personal data in accordance with our Privacy Policy, available at [privacy policy URL]. By using the Service, you consent to such processing and warrant that all data you provide is accurate. For customers subject to GDPR or CCPA, additional rights and obligations are described in our Privacy Policy and, for business customers, our Data Processing Agreement.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Cross-references your Privacy Policy, which is where the detailed data processing disclosures live. Keep the Privacy Policy linked and updated. Note: GDPR generally doesn't allow "consent by use" as a legal basis for processing — your Privacy Policy must specify the correct legal bases (e.g., contract performance, legitimate interest).</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">7</span> Confidentiality</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Each party may disclose confidential information to the other in connection with the Service. Each party agrees to: (a) maintain the confidentiality of the other party's confidential information using at least the same standard of care it uses for its own confidential information, but no less than reasonable care; (b) not disclose such information to third parties without prior written consent; and (c) use such information only for purposes of fulfilling obligations under these Terms.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> A basic mutual confidentiality provision within your ToS. For enterprise deals where more detailed confidentiality is needed, use the standalone Mutual NDA template in this pack. If you have specific carve-outs (e.g., disclosures required by law, information already public), add them explicitly.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">8</span> Third-Party Services</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">The Service may integrate with or link to third-party services. We do not control and are not responsible for the content, policies, or practices of any third-party service. Your use of third-party services is governed by their respective terms of service and privacy policies.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Limits your liability for third-party integrations (Stripe, Google, AWS, etc.). Consider listing your key sub-processors here or in your Privacy Policy/DPA. This is also where you'd reference any open-source licences your product relies on.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">9</span> Disclaimer of Warranties</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> The ALL CAPS formatting is intentional — courts in many jurisdictions require warranty disclaimers to be conspicuous to be enforceable. Some jurisdictions (particularly in Europe and some US states) limit the ability to disclaim implied warranties for consumer contracts. If you sell to consumers in regulated jurisdictions, consult a lawyer.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">10</span> Limitation of Liability</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, [COMPANY NAME] SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR YOUR USE OF THE SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY TO YOU FOR ANY CLAIMS ARISING UNDER THESE TERMS SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM OR (B) ONE HUNDRED US DOLLARS ($100).</div>
+          <div class="clause-annotation"><strong>What this does:</strong> This is one of the most important clauses in your ToS. It caps your financial exposure. The 12-month payment cap is standard for SaaS. Enterprise customers often negotiate this up significantly — be prepared for that discussion. Some EU jurisdictions do not permit liability caps for personal injury or fraud, so "to the maximum extent permitted by law" is important language.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">11</span> DMCA Copyright Complaints</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We respect intellectual property rights. If you believe content on the Service infringes your copyright, send a notice to [dmca@company.com] including: (a) a description of the copyrighted work; (b) a description of the infringing material and its location; (c) your contact information; (d) a statement of good faith belief that the use is not authorised; and (e) a statement of accuracy under penalty of perjury.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Required under the US DMCA for "safe harbour" protection if users upload infringing content. If your product allows user-generated content, this clause is essential. Register a DMCA agent with the US Copyright Office if you serve US users. Replace [dmca@company.com] with a monitored mailbox.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">12</span> Termination</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">(a) By You: You may terminate your account at any time by following the cancellation instructions in your account settings. Termination takes effect at the end of your current billing period.
+
+(b) By Us: We may suspend or terminate your access immediately, with or without notice, if we believe you have violated these Terms, if required by law, or to protect the integrity of the Service.
+
+(c) Effect of Termination: Upon termination, your licence to use the Service ends. We may delete your data 30 days after termination unless we are required by law to retain it. Sections 5, 9, 10, 12, and 14 survive termination.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Governs how the relationship ends. The 30-day data retention window gives users a chance to export their data — this is also required by GDPR's right to data portability. The survival clause is critical — it ensures liability caps and IP provisions remain in force after termination. Adjust which sections survive as appropriate.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">13</span> Modifications to Terms</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We may modify these Terms at any time. We will provide at least 14 days' notice of material changes via email or a notice within the Service. Your continued use of the Service after the effective date constitutes acceptance of the revised Terms. If you do not agree to the changes, you must stop using the Service and may request a pro-rata refund of prepaid fees.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Allows you to update your ToS without re-contracting with every user. The 14-day notice period is reasonable and reduces legal risk. For changes that materially reduce user rights, consider 30 days' notice. Some jurisdictions (notably Germany) have stricter requirements for ToS modifications with consumers.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">14</span> Governing Law and Disputes</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">These Terms are governed by the laws of [Jurisdiction, e.g., "the State of Delaware, United States"] without regard to conflict of law provisions. Any dispute arising from these Terms shall first be subject to good-faith negotiation. If unresolved within 30 days, disputes shall be resolved by binding arbitration in accordance with the rules of [arbitration body], except that either party may seek injunctive relief in a court of competent jurisdiction. YOU WAIVE THE RIGHT TO PARTICIPATE IN CLASS ACTION LAWSUITS.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Establishes where disputes are resolved. Delaware is a popular choice for US companies. The class action waiver is enforceable in most US jurisdictions but may not be enforceable in the EU, Canada, or Australia. Arbitration clauses have faced regulatory scrutiny — some jurisdictions restrict them for consumer contracts. Consult a lawyer before finalising.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">15</span> General Provisions</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">(a) Entire Agreement: These Terms, together with the Privacy Policy and any additional terms you agree to, constitute the entire agreement between you and [Company Name] regarding the Service.
+
+(b) Severability: If any provision of these Terms is found invalid or unenforceable, it will be modified to the minimum extent necessary to make it enforceable, and the remaining provisions will remain in full force.
+
+(c) Waiver: Our failure to enforce any provision shall not constitute a waiver of our rights.
+
+(d) Assignment: You may not assign your rights under these Terms. We may assign our rights to a successor in connection with a merger, acquisition, or sale of assets.
+
+(e) Contact: [Company Name], [Address], [Email], [Phone].</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Boilerplate provisions that cover common edge cases. The severability clause prevents your entire ToS from being invalidated if one clause is found unenforceable. The assignment clause lets you sell your company without renegotiating every user contract. Include your registered business address — this is required in many jurisdictions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY POLICY -->
+  <section class="section" id="privacy">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <div>
+        <h2>Privacy Policy</h2>
+        <div class="section-meta">GDPR + CCPA compliant structure — data collected, retention, user rights, cookies</div>
+      </div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-header">
+        <div class="template-header-left">
+          <div>
+            <h3>Privacy Policy</h3>
+            <div class="template-meta">GDPR + CCPA structure &bull; Replace [COMPANY NAME], [JURISDICTION], and data specifics</div>
+          </div>
+        </div>
+        <button class="copy-all-btn" onclick="copyFullTemplate('privacy-full')">Copy Full Template</button>
+      </div>
+
+      <div id="privacy-full" style="display:none;">
+PRIVACY POLICY
+
+Last Updated: [DATE]
+Effective Date: [DATE]
+
+[Company Name] ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you use our Service.
+
+1. DATA WE COLLECT
+
+We collect the following categories of personal information:
+
+Account Information: Name, email address, billing address, and payment method (processed by our payment provider; we do not store full card numbers).
+
+Usage Data: Log files, IP addresses, browser type, pages visited, features used, and timestamps. Collected automatically via server logs and analytics tools.
+
+Communications: Emails, support tickets, and messages you send us.
+
+User Content: Files, text, and data you upload or create while using the Service.
+
+Device Information: Device type, operating system, and unique device identifiers.
+
+Cookies and Tracking: See our Cookie section below.
+
+We do not knowingly collect personal information from individuals under 18 years of age.
+
+2. HOW WE USE YOUR DATA
+
+We use your personal information for the following purposes and legal bases (where GDPR applies):
+
+Providing the Service (Legal basis: Contract performance): Processing account registration, authenticating logins, delivering features, processing payments, and providing customer support.
+
+Improving the Service (Legal basis: Legitimate interest): Analysing usage patterns, debugging, testing new features, and improving performance.
+
+Marketing Communications (Legal basis: Consent): Sending product updates, newsletters, and promotional emails. You may opt out at any time via the unsubscribe link in any email or by contacting us.
+
+Legal Obligations (Legal basis: Legal obligation): Complying with applicable laws, responding to legal process, and enforcing our Terms.
+
+Safety and Security (Legal basis: Legitimate interest): Detecting fraud, abuse, and security threats.
+
+3. DATA SHARING AND THIRD PARTIES
+
+We do not sell your personal information. We share data with:
+
+Service Providers: Third-party companies that assist in operating our Service, including cloud hosting (e.g., AWS), payment processing (e.g., Stripe), email delivery (e.g., SendGrid), analytics (e.g., Mixpanel), and customer support tools. These providers are bound by data processing agreements and may only use your data as instructed.
+
+Legal Compliance: We may disclose data when required by law, court order, or regulatory authority.
+
+Business Transfers: In connection with a merger, acquisition, or sale of assets, your data may be transferred to the acquiring entity.
+
+With Your Consent: For any other purpose with your explicit consent.
+
+A current list of our sub-processors is available at [sub-processors URL].
+
+4. DATA RETENTION
+
+We retain your personal information for as long as necessary to provide the Service and comply with legal obligations:
+
+Account data: Retained for the duration of your account plus 90 days after deletion, then deleted.
+Financial records: Retained for 7 years as required by tax laws.
+Usage logs: Retained for 12 months.
+Support communications: Retained for 3 years.
+Marketing preferences: Until you opt out or we no longer need them.
+
+Upon account deletion, we will delete or anonymise your personal data within 30 days, except where retention is required by law.
+
+5. YOUR RIGHTS
+
+Depending on your location, you may have the following rights:
+
+EU/UK (GDPR/UK GDPR): Right to access, rectification, erasure ("right to be forgotten"), restriction of processing, data portability, and objection. You also have the right to lodge a complaint with your supervisory authority.
+
+California (CCPA): Right to know what data we collect, right to delete, right to opt out of sale (we do not sell data), and right to non-discrimination for exercising your rights.
+
+To exercise your rights, contact us at [privacy@company.com]. We will respond within 30 days (or within the timeframe required by applicable law). We may require identity verification before fulfilling requests.
+
+6. COOKIES AND TRACKING TECHNOLOGIES
+
+We use cookies and similar technologies:
+
+Essential Cookies: Required for login sessions and security. Cannot be disabled.
+Analytics Cookies: Used to understand how users interact with the Service (e.g., Google Analytics). You may opt out via [opt-out link].
+Marketing Cookies: Used for targeted advertising (if applicable). Managed via our cookie consent banner.
+
+You can manage cookies in your browser settings. Disabling non-essential cookies will not affect core Service functionality.
+
+7. INTERNATIONAL DATA TRANSFERS
+
+Our Service is operated from [Country]. If you are located outside [Country], your data may be transferred to and processed in countries with different data protection laws. Where we transfer data from the EEA, UK, or Switzerland, we use appropriate safeguards including Standard Contractual Clauses (SCCs) approved by the European Commission.
+
+8. SECURITY
+
+We implement appropriate technical and organisational measures to protect your personal information, including encryption in transit (TLS 1.2+), encryption at rest, access controls, and regular security assessments. However, no method of transmission over the internet is completely secure. In the event of a data breach that affects your rights and freedoms, we will notify you and the relevant supervisory authority as required by law.
+
+9. CHILDREN'S PRIVACY
+
+Our Service is not intended for children under 18 years of age. We do not knowingly collect personal information from minors. If you believe we have inadvertently collected information from a minor, please contact us at [privacy@company.com] and we will delete it promptly.
+
+10. CHANGES TO THIS POLICY
+
+We may update this Privacy Policy from time to time. We will notify you of material changes via email or a notice within the Service at least 14 days before the change takes effect. Continued use of the Service after the effective date constitutes acceptance of the updated Policy.
+
+11. CONTACT US
+
+If you have questions about this Privacy Policy or wish to exercise your rights, contact our Data Privacy team:
+
+[Company Name]
+Attn: Privacy
+[Address]
+[privacy@company.com]
+
+If you are in the EU/EEA and are not satisfied with our response, you may lodge a complaint with your local supervisory authority.
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">1</span> Data We Collect</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We collect the following categories of personal information:
+
+Account Information: Name, email address, billing address, and payment method (processed by our payment provider; we do not store full card numbers).
+
+Usage Data: Log files, IP addresses, browser type, pages visited, features used, and timestamps. Collected automatically via server logs and analytics tools.
+
+Communications: Emails, support tickets, and messages you send us.
+
+User Content: Files, text, and data you upload or create while using the Service.
+
+Device Information: Device type, operating system, and unique device identifiers.
+
+Cookies and Tracking: See our Cookie section below.
+
+We do not knowingly collect personal information from individuals under 18 years of age.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> GDPR and CCPA both require you to specifically enumerate the categories of data you collect. Be accurate — if you collect data not listed here, you risk regulatory enforcement. Review this list against every data point your product actually captures, including third-party tools you use (analytics, support chat, etc.).</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">2</span> How We Use Your Data (with Legal Bases)</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We use your personal information for the following purposes and legal bases (where GDPR applies):
+
+Providing the Service (Legal basis: Contract performance): Processing account registration, authenticating logins, delivering features, processing payments, and providing customer support.
+
+Improving the Service (Legal basis: Legitimate interest): Analysing usage patterns, debugging, testing new features, and improving performance.
+
+Marketing Communications (Legal basis: Consent): Sending product updates, newsletters, and promotional emails. You may opt out at any time via the unsubscribe link in any email or by contacting us.
+
+Legal Obligations (Legal basis: Legal obligation): Complying with applicable laws, responding to legal process, and enforcing our Terms.
+
+Safety and Security (Legal basis: Legitimate interest): Detecting fraud, abuse, and security threats.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> GDPR Article 13 requires you to state the legal basis for each processing activity. "Legitimate interest" is broad but must be balanced against user rights. You should document your Legitimate Interest Assessments (LIAs) internally. Using "consent" as a basis for analytics is increasingly scrutinised — consider "legitimate interest" with an opt-out option instead.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">3</span> Data Sharing and Third Parties</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We do not sell your personal information. We share data with:
+
+Service Providers: Third-party companies that assist in operating our Service, including cloud hosting (e.g., AWS), payment processing (e.g., Stripe), email delivery (e.g., SendGrid), analytics, and customer support tools. These providers are bound by data processing agreements and may only use your data as instructed.
+
+Legal Compliance: We may disclose data when required by law, court order, or regulatory authority.
+
+Business Transfers: In connection with a merger, acquisition, or sale of assets, your data may be transferred to the acquiring entity.
+
+A current list of our sub-processors is available at [sub-processors URL].</div>
+          <div class="clause-annotation"><strong>What this does:</strong> "We do not sell your personal information" is required language for CCPA compliance. Replace the example providers with your actual sub-processors. Maintaining a sub-processor list is a GDPR best practice and is required under your DPA with B2B customers. Update this list whenever you add or remove a third-party tool.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">4</span> Data Retention</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We retain your personal information for as long as necessary to provide the Service and comply with legal obligations:
+
+Account data: Retained for the duration of your account plus 90 days after deletion.
+Financial records: Retained for 7 years as required by tax laws.
+Usage logs: Retained for 12 months.
+Support communications: Retained for 3 years.
+
+Upon account deletion, we will delete or anonymise your personal data within 30 days, except where retention is required by law.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> GDPR requires you to state retention periods and justify them. Adjust retention periods to match your actual practices — stating a period you don't follow is worse than saying "as long as necessary." The 7-year financial record retention is common in many jurisdictions but varies — check your local tax laws.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">5</span> Your Rights (GDPR + CCPA)</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Depending on your location, you may have the following rights:
+
+EU/UK (GDPR/UK GDPR): Right to access, rectification, erasure ("right to be forgotten"), restriction of processing, data portability, and objection. You also have the right to lodge a complaint with your supervisory authority.
+
+California (CCPA): Right to know what data we collect, right to delete, right to opt out of sale (we do not sell data), and right to non-discrimination for exercising your rights.
+
+To exercise your rights, contact us at [privacy@company.com]. We will respond within 30 days. We may require identity verification before fulfilling requests.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> GDPR requires you to make these rights visible and easy to exercise. Build a process to handle Data Subject Access Requests (DSARs) — you must respond within 30 days under GDPR (or one month). Consider building a self-service data export and deletion flow in your product to reduce manual burden.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">6</span> Cookies and Tracking</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">We use cookies and similar technologies:
+
+Essential Cookies: Required for login sessions and security. Cannot be disabled.
+Analytics Cookies: Used to understand how users interact with the Service. You may opt out via your browser settings or our cookie consent manager.
+Marketing Cookies: Used for targeted advertising (if applicable). Managed via our cookie consent banner.
+
+You can manage cookies in your browser settings. Disabling non-essential cookies will not affect core Service functionality.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> The EU ePrivacy Directive (the "Cookie Law") requires prior consent for non-essential cookies. Implement a compliant cookie consent banner (e.g., Cookiebot, OneTrust, or a custom implementation). Essential session cookies don't require consent. Marketing cookies require explicit opt-in in the EU — do not default them to "on."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DPA -->
+  <section class="section" id="dpa">
+    <div class="section-header">
+      <div class="section-icon">🛡️</div>
+      <div>
+        <h2>Data Processing Agreement (DPA)</h2>
+        <div class="section-meta">For B2B SaaS — processor/controller definitions, security, breach notification</div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>When you need a DPA:</strong> If your B2B SaaS customers are subject to GDPR and you process personal data on their behalf, you are legally required to have a DPA in place. Enterprise customers will request one — having it ready speeds up deals.</div>
+
+    <div class="template-block">
+      <div class="template-header">
+        <div class="template-header-left">
+          <div>
+            <h3>Data Processing Agreement</h3>
+            <div class="template-meta">GDPR Article 28 compliant &bull; Replace [COMPANY NAME], [CUSTOMER], and specifics</div>
+          </div>
+        </div>
+        <button class="copy-all-btn" onclick="copyFullTemplate('dpa-full')">Copy Full Template</button>
+      </div>
+
+      <div id="dpa-full" style="display:none;">
+DATA PROCESSING AGREEMENT
+
+This Data Processing Agreement ("DPA") forms part of the agreement between [Company Name] ("Processor") and [Customer Name] ("Controller") for the provision of the [Service Name] service ("Agreement").
+
+1. DEFINITIONS
+
+"Controller": The entity that determines the purposes and means of processing personal data (the Customer).
+"Processor": The entity that processes personal data on behalf of the Controller ([Company Name]).
+"Personal Data": Any information relating to an identified or identifiable natural person, as defined under applicable Data Protection Law.
+"Data Protection Law": The EU General Data Protection Regulation (2016/679) ("GDPR"), the UK GDPR, and any applicable national implementing legislation.
+"Processing": Any operation performed on Personal Data, including collection, storage, use, disclosure, or erasure.
+"Sub-processor": Any third party engaged by the Processor to process Personal Data on behalf of the Controller.
+
+2. SCOPE OF PROCESSING
+
+Nature and Purpose: Processor shall process Personal Data only as necessary to provide the Service described in the Agreement and as documented in Schedule 1 to this DPA.
+
+Categories of Data Subjects: Employees and users of the Controller.
+
+Types of Personal Data: As specified in Schedule 1.
+
+Duration: For the duration of the Agreement, or until the Controller instructs deletion.
+
+3. PROCESSOR OBLIGATIONS
+
+The Processor shall:
+(a) Process Personal Data only on documented instructions from the Controller, including with regard to transfers of Personal Data to third countries;
+(b) Ensure that persons authorised to process Personal Data have committed to confidentiality or are under an appropriate statutory obligation of confidentiality;
+(c) Implement appropriate technical and organisational measures (see Section 5) to ensure a level of security appropriate to the risk;
+(d) Not engage sub-processors without prior written authorisation from the Controller (general authorisation is provided in Section 6);
+(e) Assist the Controller in ensuring compliance with the obligations under GDPR Articles 32–36;
+(f) Delete or return all Personal Data to the Controller at the end of the service relationship, as chosen by the Controller;
+(g) Make available all information necessary to demonstrate compliance with this DPA and allow for and contribute to audits and inspections.
+
+4. CONTROLLER OBLIGATIONS
+
+The Controller shall:
+(a) Ensure it has a lawful basis for the processing activities described herein;
+(b) Provide clear and documented instructions to the Processor;
+(c) Ensure that data subjects have been informed about the processing described in this DPA;
+(d) Be responsible for the accuracy, quality, and legality of Personal Data provided.
+
+5. SECURITY MEASURES
+
+The Processor implements the following technical and organisational security measures:
+
+Encryption: All Personal Data is encrypted in transit using TLS 1.2 or higher. Data at rest is encrypted using AES-256 encryption.
+
+Access Controls: Access to Personal Data is restricted to authorised personnel on a need-to-know basis. Multi-factor authentication is required for all systems handling Personal Data.
+
+Infrastructure Security: The Service is hosted on [e.g., AWS/GCP] infrastructure with SOC 2 Type II certification. Network access is controlled via firewalls and intrusion detection systems.
+
+Vulnerability Management: Regular penetration testing (at least annually) and vulnerability scanning. Security patches are applied within [X] days of availability.
+
+Backup and Recovery: Personal Data is backed up daily with a recovery point objective (RPO) of 24 hours and recovery time objective (RTO) of [X] hours.
+
+6. SUB-PROCESSORS
+
+The Controller provides general authorisation for the Processor to engage sub-processors. A current list of authorised sub-processors is maintained at [sub-processors URL]. The Processor shall:
+(a) Notify the Controller of any intended addition or replacement of sub-processors at least 30 days in advance;
+(b) Impose data protection obligations on sub-processors equivalent to those in this DPA;
+(c) Remain fully liable to the Controller for the performance of sub-processors' obligations.
+
+7. DATA SUBJECT RIGHTS
+
+The Processor shall promptly notify the Controller if it receives a request from a data subject exercising their rights under Data Protection Law. The Processor shall assist the Controller in fulfilling such requests, to the extent technically feasible. The Processor shall not respond directly to data subject requests without the Controller's prior written authorisation.
+
+8. BREACH NOTIFICATION
+
+In the event of a Personal Data Breach, the Processor shall:
+(a) Notify the Controller without undue delay and in any event within 48 hours of becoming aware of the breach;
+(b) Provide the following information: nature of the breach, categories and approximate number of data subjects affected, categories and approximate number of records affected, likely consequences, and measures taken or proposed;
+(c) Cooperate with the Controller and take reasonable steps to mitigate the effects of the breach.
+
+The Controller is responsible for notifying the relevant supervisory authority and affected data subjects as required under GDPR Articles 33 and 34.
+
+9. INTERNATIONAL DATA TRANSFERS
+
+Where the Processor transfers Personal Data outside the EEA, UK, or Switzerland, such transfers shall be subject to appropriate safeguards, including:
+(a) Standard Contractual Clauses (SCCs) approved by the European Commission; or
+(b) Another lawful transfer mechanism under applicable Data Protection Law.
+
+10. AUDIT RIGHTS
+
+The Controller may, upon reasonable notice and at its own expense, audit the Processor's compliance with this DPA no more than once per year. The Processor may satisfy audit requests by providing relevant third-party audit reports (e.g., SOC 2 Type II, ISO 27001) in the first instance.
+
+11. TERM AND TERMINATION
+
+This DPA remains in force for the duration of the Agreement. Upon termination, the Processor shall, at the Controller's election, delete or return all Personal Data within 30 days, unless retention is required by applicable law.
+
+12. LIABILITY
+
+Each party's liability under this DPA is subject to the limitations set out in the main Agreement. Nothing in this DPA limits a party's liability for fraudulent misrepresentation, gross negligence, or wilful misconduct.
+
+13. GOVERNING LAW
+
+This DPA is governed by the same law as the main Agreement, subject to any mandatory requirements of Data Protection Law.
+
+SCHEDULE 1 — PROCESSING DETAILS
+
+Nature of Processing: Hosting, storage, processing, and display of Customer data as necessary to provide the Service.
+
+Purpose of Processing: Provision of the [Service Name] SaaS service as described in the Agreement.
+
+Types of Personal Data: Email addresses, names, usage data, and any other data uploaded by the Controller's users.
+
+Categories of Data Subjects: The Controller's employees, customers, and end users.
+
+Duration: The duration of the Agreement.
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">1</span> Definitions</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">"Controller": The entity that determines the purposes and means of processing personal data (the Customer).
+"Processor": The entity that processes personal data on behalf of the Controller ([Company Name]).
+"Personal Data": Any information relating to an identified or identifiable natural person, as defined under applicable Data Protection Law.
+"Data Protection Law": The EU General Data Protection Regulation (2016/679) ("GDPR"), the UK GDPR, and applicable national implementing legislation.
+"Sub-processor": Any third party engaged by the Processor to process Personal Data on behalf of the Controller.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Establishes the roles. In a typical B2B SaaS relationship, your customer is the Controller (they decide what data to process) and you are the Processor (you process it on their behalf). This distinction is fundamental to GDPR Article 28. Get this wrong and both parties face compliance risk.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">2</span> Security Measures</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">The Processor implements the following technical and organisational security measures:
+
+Encryption: All Personal Data is encrypted in transit using TLS 1.2 or higher. Data at rest is encrypted using AES-256 encryption.
+
+Access Controls: Access to Personal Data is restricted to authorised personnel on a need-to-know basis. Multi-factor authentication is required for all systems handling Personal Data.
+
+Infrastructure Security: The Service is hosted on infrastructure with SOC 2 Type II certification. Network access is controlled via firewalls and intrusion detection systems.
+
+Vulnerability Management: Regular penetration testing (at least annually) and vulnerability scanning.
+
+Backup and Recovery: Personal Data is backed up daily.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> GDPR Article 32 requires "appropriate technical and organisational measures." Only list measures you actually have in place — false statements here create serious liability. If you don't yet have SOC 2, remove that reference. Enterprise customers will scrutinise this section closely and may request evidence of these controls.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">3</span> Breach Notification</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">In the event of a Personal Data Breach, the Processor shall:
+(a) Notify the Controller without undue delay and in any event within 48 hours of becoming aware of the breach;
+(b) Provide: nature of the breach, categories and approximate number of data subjects affected, approximate number of records affected, likely consequences, and measures taken or proposed;
+(c) Cooperate with the Controller and take reasonable steps to mitigate the effects of the breach.
+
+The Controller is responsible for notifying the relevant supervisory authority and affected data subjects as required under GDPR Articles 33 and 34.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> GDPR requires breach notification to authorities within 72 hours of discovery. Your DPA gives you 48 hours to notify your customer so they have time to make their own notification. Build an incident response plan internally so you can meet this timeline. Document all decisions made during a breach response.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLA -->
+  <section class="section" id="sla">
+    <div class="section-header">
+      <div class="section-icon">⏱️</div>
+      <div>
+        <h2>Service Level Agreement (SLA)</h2>
+        <div class="section-meta">99.9% uptime, incident response times, credits for downtime, exclusions</div>
+      </div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-header">
+        <div class="template-header-left">
+          <div>
+            <h3>Service Level Agreement</h3>
+            <div class="template-meta">99.9% uptime commitment &bull; Adjust credit percentages and response times for your tier</div>
+          </div>
+        </div>
+        <button class="copy-all-btn" onclick="copyFullTemplate('sla-full')">Copy Full Template</button>
+      </div>
+
+      <div id="sla-full" style="display:none;">
+SERVICE LEVEL AGREEMENT
+
+This Service Level Agreement ("SLA") is incorporated into the agreement between [Company Name] ("Provider") and the Customer for use of the [Service Name] Service.
+
+1. UPTIME COMMITMENT
+
+Provider commits to maintaining Service availability of 99.9% per calendar month ("Monthly Uptime Commitment"), measured as:
+
+Uptime % = ((Total Minutes in Month − Downtime Minutes) / Total Minutes in Month) × 100
+
+"Downtime" means total accumulated minutes per month during which the Service's core features are unavailable to Customer due to Provider error, excluding Scheduled Maintenance and Excluded Events.
+
+99.9% uptime allows for approximately 43.8 minutes of unplanned downtime per month.
+
+2. INCIDENT CLASSIFICATION AND RESPONSE TIMES
+
+Severity 1 — Critical: Complete service outage or data loss. Initial response: 1 hour. Update frequency: Every 2 hours. Target resolution: 4 hours.
+
+Severity 2 — High: Major feature unavailable; significant performance degradation affecting >50% of users. Initial response: 4 hours. Update frequency: Every 4 hours. Target resolution: 8 hours.
+
+Severity 3 — Medium: Non-critical feature unavailable; moderate performance degradation. Initial response: 8 business hours. Update frequency: Daily. Target resolution: 3 business days.
+
+Severity 4 — Low: Minor issue; cosmetic defects; feature requests. Initial response: 2 business days. Target resolution: Next scheduled release.
+
+Response times are measured from the time Provider receives notification during business hours (09:00–17:00 in the timezone of Provider's primary support team, Monday–Friday, excluding public holidays), unless a 24/7 support tier is specified in your subscription.
+
+3. SERVICE CREDITS
+
+If Provider fails to meet the Monthly Uptime Commitment, Customer is eligible for Service Credits as follows:
+
+99.0%–99.9% uptime: 10% credit of monthly subscription fee
+95.0%–99.0% uptime: 25% credit of monthly subscription fee
+Below 95.0% uptime: 50% credit of monthly subscription fee
+
+Credits are applied to the Customer's next invoice. Credits are Customer's sole and exclusive remedy for availability failures. Maximum monthly credits shall not exceed 50% of Customer's monthly subscription fee. Credits have no cash value and are forfeited upon termination.
+
+To request a credit, Customer must submit a written request to [support@company.com] within 30 days of the end of the calendar month in which the downtime occurred, with details of the downtime periods claimed.
+
+4. SCHEDULED MAINTENANCE
+
+Provider will perform Scheduled Maintenance with at least 72 hours' advance notice via email or in-service notification, typically between 00:00 and 06:00 UTC on weekends. Scheduled Maintenance windows will not exceed 4 hours per month. Scheduled Maintenance is excluded from Downtime calculations.
+
+5. EXCLUDED EVENTS
+
+The following are excluded from Downtime calculations and do not entitle Customer to credits:
+
+(a) Force majeure events (acts of god, war, natural disasters, government actions);
+(b) Customer's acts or omissions, or acts or omissions of Customer's third-party services;
+(c) Problems arising from Customer's internet service provider or network connectivity;
+(d) Customer's failure to follow documentation or best practices;
+(e) Beta, preview, or experimental features;
+(f) Free trials or sandbox environments;
+(g) Denial of service attacks, hacking attempts, or other third-party security incidents outside Provider's reasonable control.
+
+6. MONITORING AND REPORTING
+
+Provider maintains real-time service status at [status.company.com]. Customers can subscribe to status page notifications. Monthly uptime reports are available upon request.
+
+7. SUPPORT CHANNELS
+
+Standard: Email support at [support@company.com]. Business hours only.
+Priority: Live chat and email. Business hours, with 24/7 monitoring for Severity 1 incidents.
+Enterprise: Dedicated support manager, phone support, and 24/7 on-call for Severity 1 incidents.
+
+Support tier is determined by Customer's subscription plan as described on the pricing page.
+
+8. DATA BACKUP AND RECOVERY
+
+Provider performs automated daily backups of Customer data with:
+Recovery Point Objective (RPO): 24 hours (maximum data loss in a disaster scenario).
+Recovery Time Objective (RTO): [X] hours (time to restore service after a disaster).
+Backups are retained for [30] days. Provider will make reasonable efforts to restore data from backup upon request, but cannot guarantee complete recovery in all scenarios.
+
+9. SLA MODIFICATIONS
+
+Provider may modify this SLA with 30 days' notice. If a modification materially reduces the uptime commitment or credits, Customer may terminate affected services for a pro-rata refund of prepaid fees within 15 days of notice.
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">1</span> Uptime Commitment — 99.9%</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Provider commits to maintaining Service availability of 99.9% per calendar month ("Monthly Uptime Commitment"), measured as:
+
+Uptime % = ((Total Minutes in Month − Downtime Minutes) / Total Minutes in Month) × 100
+
+"Downtime" means total accumulated minutes per month during which the Service's core features are unavailable to Customer due to Provider error, excluding Scheduled Maintenance and Excluded Events.
+
+99.9% uptime allows for approximately 43.8 minutes of unplanned downtime per month.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Defines your uptime commitment. 99.9% ("three nines") is standard for most SaaS. 99.99% ("four nines") allows only ~4.4 minutes/month and requires significant infrastructure investment. Make sure your hosting provider's own SLA supports the commitment you're making to customers — check AWS/GCP/Azure SLAs first.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">2</span> Incident Response Times</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Severity 1 — Critical: Complete service outage or data loss. Initial response: 1 hour. Update frequency: Every 2 hours. Target resolution: 4 hours.
+
+Severity 2 — High: Major feature unavailable; significant degradation affecting >50% of users. Initial response: 4 hours. Target resolution: 8 hours.
+
+Severity 3 — Medium: Non-critical feature unavailable; moderate degradation. Initial response: 8 business hours. Target resolution: 3 business days.
+
+Severity 4 — Low: Minor issue or feature request. Initial response: 2 business days.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Sets customer expectations for support response. Be realistic — only commit to response times you can actually meet. "Initial response" is different from "resolution" — make that clear. 24/7 Severity 1 monitoring requires on-call engineering. Only commit to that if you have the operational capability. You can tier these by subscription plan.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">3</span> Service Credits</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">If Provider fails to meet the Monthly Uptime Commitment, Customer is eligible for Service Credits:
+
+99.0%–99.9% uptime: 10% credit of monthly subscription fee
+95.0%–99.0% uptime: 25% credit of monthly subscription fee
+Below 95.0% uptime: 50% credit of monthly subscription fee
+
+Credits are applied to the Customer's next invoice. Maximum monthly credits shall not exceed 50% of monthly subscription fee. Credits have no cash value and are the Customer's sole and exclusive remedy for availability failures.
+
+To claim credits, Customer must submit a written request within 30 days of the month in which downtime occurred.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> The "sole and exclusive remedy" language is critical — it prevents customers from claiming consequential damages (e.g., lost revenue) when you miss your SLA. Enterprise customers will often negotiate this. The credit request requirement protects you from historical claims — customers must actively claim credits. The 50% cap limits your maximum credit exposure.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">4</span> Excluded Events</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">The following are excluded from Downtime calculations and do not entitle Customer to credits:
+
+(a) Force majeure events (acts of god, war, natural disasters, government actions);
+(b) Customer's acts or omissions, or use by Customer's third-party services;
+(c) Problems arising from Customer's internet service provider or network connectivity;
+(d) Customer's failure to follow documentation or best practices;
+(e) Beta, preview, or experimental features;
+(f) Free trials or sandbox environments;
+(g) Denial of service attacks or third-party security incidents outside Provider's reasonable control.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Carve-outs protect you from SLA credit claims for events outside your control. Customer-caused outages (e.g., bad API usage, misconfigured integrations) should not count against your SLA. DDoS attacks are explicitly excluded here — if a customer causes or attracts an attack that takes down your service, they shouldn't get credits for it. Ensure your force majeure language matches your ToS.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NDA -->
+  <section class="section" id="nda">
+    <div class="section-header">
+      <div class="section-icon">🤝</div>
+      <div>
+        <h2>Mutual Non-Disclosure Agreement</h2>
+        <div class="section-meta">Two-party NDA for partnerships, sales conversations, and integrations</div>
+      </div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-header">
+        <div class="template-header-left">
+          <div>
+            <h3>Mutual NDA</h3>
+            <div class="template-meta">Two-way confidentiality &bull; Fill [Party A], [Party B], and [Jurisdiction]</div>
+          </div>
+        </div>
+        <button class="copy-all-btn" onclick="copyFullTemplate('nda-full')">Copy Full Template</button>
+      </div>
+
+      <div id="nda-full" style="display:none;">
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of [DATE] between:
+
+Party A: [Company Name A], a [entity type] organised under the laws of [jurisdiction], having its principal place of business at [address] ("Party A"); and
+
+Party B: [Company Name B], a [entity type] organised under the laws of [jurisdiction], having its principal place of business at [address] ("Party B").
+
+Collectively referred to as the "Parties."
+
+PURPOSE
+
+The Parties wish to explore a potential business relationship (the "Purpose") and may disclose certain confidential and proprietary information to each other in connection with that evaluation.
+
+1. DEFINITION OF CONFIDENTIAL INFORMATION
+
+"Confidential Information" means any non-public information disclosed by one Party (the "Disclosing Party") to the other Party (the "Receiving Party"), whether disclosed in writing, orally, electronically, or by any other means, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and the circumstances of disclosure, including but not limited to: business plans, financial information, product roadmaps, technology, customer lists, pricing, and trade secrets.
+
+2. EXCLUSIONS FROM CONFIDENTIAL INFORMATION
+
+Confidential Information does not include information that:
+(a) Is or becomes publicly available through no breach of this Agreement by the Receiving Party;
+(b) Was rightfully known to the Receiving Party without restriction prior to disclosure;
+(c) Is rightfully received from a third party without restriction on disclosure;
+(d) Is independently developed by the Receiving Party without use of the Disclosing Party's Confidential Information; or
+(e) Is required to be disclosed by law, regulation, or court order, provided the Receiving Party gives prompt prior written notice to the Disclosing Party (where legally permitted) to allow the Disclosing Party to seek a protective order.
+
+3. OBLIGATIONS OF RECEIVING PARTY
+
+Each Receiving Party shall:
+(a) Keep all Confidential Information strictly confidential;
+(b) Not disclose Confidential Information to any third party without the prior written consent of the Disclosing Party;
+(c) Restrict access to Confidential Information to those employees, contractors, advisors, or agents who have a need to know for the Purpose and are bound by confidentiality obligations no less restrictive than those in this Agreement;
+(d) Use Confidential Information solely for the Purpose and for no other purpose;
+(e) Protect Confidential Information using at least the same standard of care as it uses to protect its own confidential information of similar nature, but no less than reasonable care;
+(f) Promptly notify the Disclosing Party of any actual or suspected unauthorised disclosure.
+
+4. TERM
+
+This Agreement is effective as of the date first written above and shall continue for a period of [2] years, unless earlier terminated by either Party with 30 days' written notice. Notwithstanding termination, confidentiality obligations with respect to Confidential Information disclosed during the term shall survive for a period of [3] years from the date of disclosure.
+
+5. RETURN OR DESTRUCTION OF CONFIDENTIAL INFORMATION
+
+Upon the Disclosing Party's request, or upon termination of this Agreement, the Receiving Party shall promptly return or destroy (and certify such destruction in writing) all tangible materials containing Confidential Information, including all copies, extracts, and summaries, except as required to be retained by applicable law.
+
+6. NO LICENCE
+
+Nothing in this Agreement grants either Party any rights, licences, or interests in or to any Confidential Information, or to any intellectual property, except the limited right to use Confidential Information for the Purpose.
+
+7. NO WARRANTY
+
+All Confidential Information is provided "AS IS." Neither Party makes any warranty regarding the accuracy, completeness, or fitness for any purpose of any Confidential Information disclosed.
+
+8. REMEDIES
+
+Each Party acknowledges that breach of this Agreement may cause irreparable harm not adequately compensable by monetary damages, and that the Disclosing Party shall be entitled to seek equitable relief, including injunction and specific performance, in addition to all other remedies available at law or in equity, without the requirement to post any bond or other security.
+
+9. GENERAL
+
+(a) Entire Agreement: This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior negotiations and agreements relating thereto.
+
+(b) Amendment: This Agreement may not be amended except by a written instrument signed by both Parties.
+
+(c) Governing Law: This Agreement is governed by and construed in accordance with the laws of [Jurisdiction], without regard to its conflict of law principles.
+
+(d) Severability: If any provision of this Agreement is held invalid or unenforceable, the remaining provisions shall continue in full force.
+
+(e) Counterparts: This Agreement may be executed in counterparts and electronic signatures shall be deemed original.
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first written above.
+
+[COMPANY NAME A]
+By: ___________________________
+Name:
+Title:
+Date:
+
+[COMPANY NAME B]
+By: ___________________________
+Name:
+Title:
+Date:
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">1</span> Definition of Confidential Information</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">"Confidential Information" means any non-public information disclosed by one Party (the "Disclosing Party") to the other Party (the "Receiving Party"), whether disclosed in writing, orally, electronically, or by any other means, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and the circumstances of disclosure, including but not limited to: business plans, financial information, product roadmaps, technology, customer lists, pricing, and trade secrets.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> A broad definition protects more information. The "reasonably should be understood" language is important — it covers verbal conversations even if someone forgets to say "this is confidential." Some counterparties prefer a narrower definition with a requirement to mark information "CONFIDENTIAL" — be prepared to negotiate this clause in both directions.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">2</span> Exclusions from Confidential Information</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Confidential Information does not include information that:
+(a) Is or becomes publicly available through no breach of this Agreement;
+(b) Was rightfully known to the Receiving Party prior to disclosure;
+(c) Is rightfully received from a third party without restriction;
+(d) Is independently developed without use of the Disclosing Party's information; or
+(e) Is required to be disclosed by law or court order, provided the Receiving Party gives prompt prior written notice where legally permitted.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> The standard "RIND" carve-outs: Rightfully known, Independently developed, Not confidential (public), Disclosed by law. The legal compulsion carve-out (e) is important — without it, you'd be required to breach the NDA to comply with a court subpoena, which is impossible. The "prior notice" requirement allows the Disclosing Party to seek a protective order first.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">3</span> Remedies for Breach</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Each Party acknowledges that breach of this Agreement may cause irreparable harm not adequately compensable by monetary damages, and that the Disclosing Party shall be entitled to seek equitable relief, including injunction and specific performance, in addition to all other remedies available at law or in equity, without the requirement to post any bond or other security.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> The "irreparable harm" acknowledgement is pre-emptive — if you need an emergency injunction to stop someone from leaking your trade secrets, courts often require you to show irreparable harm. By getting the other party to acknowledge it in advance, you improve your chances of getting emergency relief quickly. The "without bond" language removes a potentially expensive requirement in some jurisdictions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MSA -->
+  <section class="section" id="msa">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <div>
+        <h2>Master Service Agreement (MSA)</h2>
+        <div class="section-meta">Framework agreement for enterprise deals — governs all orders and statements of work</div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>When you need an MSA:</strong> Enterprise customers typically request an MSA before signing any order forms. The MSA sets the legal framework — individual Order Forms or Statements of Work specify the product, price, and duration. Having your own MSA ready prevents you from signing the customer's paper (which is usually written to protect them, not you).</div>
+
+    <div class="template-block">
+      <div class="template-header">
+        <div class="template-header-left">
+          <div>
+            <h3>Master Service Agreement</h3>
+            <div class="template-meta">Enterprise SaaS framework &bull; Attach Order Forms for individual subscriptions</div>
+          </div>
+        </div>
+        <button class="copy-all-btn" onclick="copyFullTemplate('msa-full')">Copy Full Template</button>
+      </div>
+
+      <div id="msa-full" style="display:none;">
+MASTER SERVICE AGREEMENT
+
+This Master Service Agreement ("MSA" or "Agreement") is entered into as of [DATE] between:
+
+[Company Name] ("Provider"), a [entity type] organised under the laws of [jurisdiction], having its principal place of business at [address]; and
+
+[Customer Name] ("Customer"), a [entity type] organised under the laws of [jurisdiction], having its principal place of business at [address].
+
+1. DEFINITIONS
+
+"Order Form" means a written or electronic ordering document, executed by both parties, that specifies the Services, fees, and term.
+
+"Services" means the software-as-a-service products and support described in an Order Form.
+
+"Authorised Users" means Customer's employees, contractors, and agents who are authorised to access the Services under an Order Form.
+
+"Customer Data" means all data, content, and information submitted by Customer or its Authorised Users through the Services.
+
+"Effective Date" means the date of the first executed Order Form under this Agreement.
+
+2. SERVICES
+
+2.1 Provision: Provider will make the Services available to Customer and its Authorised Users in accordance with this Agreement and the applicable Order Form. Provider may update, modify, or enhance the Services provided that such changes do not materially degrade the functionality provided to Customer.
+
+2.2 Licence: Subject to the terms of this Agreement and payment of applicable fees, Provider grants Customer a non-exclusive, non-transferable, non-sublicensable licence to access and use the Services during the term solely for Customer's internal business purposes.
+
+2.3 Restrictions: Customer shall not: (a) sublicence, resell, or distribute the Services; (b) reverse engineer or attempt to derive source code; (c) use the Services to build a competing product; (d) share access credentials with non-Authorised Users; or (e) use the Services in violation of applicable laws.
+
+3. FEES AND PAYMENT
+
+3.1 Fees: Customer shall pay the fees specified in each Order Form. Unless otherwise stated, fees are invoiced annually in advance.
+
+3.2 Payment Terms: Invoices are due within 30 days of invoice date. Amounts past due accrue interest at 1.5% per month (or the maximum rate permitted by law, whichever is lower).
+
+3.3 Taxes: Fees are exclusive of taxes. Customer is responsible for all applicable taxes except for Provider's income taxes.
+
+3.4 Suspension: Provider may suspend Services for non-payment with 10 days' written notice. Suspension does not relieve Customer of payment obligations.
+
+4. CUSTOMER OBLIGATIONS
+
+Customer shall: (a) be responsible for all use of the Services by its Authorised Users; (b) comply with all applicable laws in connection with its use; (c) maintain accurate contact and billing information; (d) be responsible for the accuracy and legality of Customer Data; and (e) use reasonable security practices to prevent unauthorised access to its account.
+
+5. INTELLECTUAL PROPERTY
+
+5.1 Provider IP: Provider retains all rights, title, and interest in the Services, including all modifications, updates, and derivative works. No rights are granted to Customer except as expressly stated herein.
+
+5.2 Customer Data: Customer retains all rights in Customer Data. Customer grants Provider a limited, non-exclusive licence to host, process, and transmit Customer Data solely to provide the Services.
+
+5.3 Aggregated Data: Provider may use anonymised, aggregated usage data that does not identify Customer or its users for the purpose of improving the Services and for industry benchmarking.
+
+5.4 Feedback: Customer may provide feedback about the Services. Provider may use such feedback without restriction or obligation to Customer.
+
+6. CONFIDENTIALITY
+
+Each Party shall keep confidential all Confidential Information received from the other Party and shall use it only for purposes of performing under this Agreement. Each Party shall protect the other's Confidential Information with no less than the same care it uses to protect its own confidential information, and in any event no less than reasonable care. Either Party may disclose Confidential Information to its legal counsel, accountants, and advisors who are bound by professional confidentiality obligations.
+
+7. WARRANTIES
+
+7.1 Provider Warranties: Provider warrants that: (a) the Services will perform materially in accordance with the applicable documentation during the term; and (b) Provider has the rights to grant the licences in this Agreement.
+
+7.2 Customer Warranties: Customer warrants that it has the right to provide Customer Data to Provider for the purposes described herein and that its use of the Services complies with applicable law.
+
+7.3 Disclaimer: EXCEPT AS EXPRESSLY SET FORTH IN SECTION 7.1, THE SERVICES ARE PROVIDED "AS IS." PROVIDER DISCLAIMS ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+8. INDEMNIFICATION
+
+8.1 Provider Indemnity: Provider shall defend, indemnify, and hold harmless Customer against third-party claims alleging that the Services, as provided by Provider and used in accordance with this Agreement, infringe a third party's intellectual property rights.
+
+8.2 Customer Indemnity: Customer shall defend, indemnify, and hold harmless Provider against third-party claims arising from: (a) Customer Data; (b) Customer's use of the Services in violation of this Agreement or applicable law; or (c) Customer's products and services.
+
+8.3 Indemnification Process: The indemnified party must: (a) promptly notify the indemnifying party of any claim; (b) give the indemnifying party sole control over the defence; and (c) provide reasonable cooperation. The indemnifying party shall not settle any claim in a way that imposes obligations on the indemnified party without prior written consent.
+
+9. LIMITATION OF LIABILITY
+
+9.1 Exclusion of Indirect Damages: NEITHER PARTY WILL BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM THIS AGREEMENT, EVEN IF ADVISED OF THEIR POSSIBILITY.
+
+9.2 Cap on Liability: EACH PARTY'S TOTAL CUMULATIVE LIABILITY ARISING FROM OR RELATING TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY CUSTOMER IN THE 12 MONTHS PRECEDING THE CLAIM.
+
+9.3 Exceptions: The limitations in this Section do not apply to: (a) a party's indemnification obligations; (b) a party's breach of confidentiality; (c) customer's payment obligations; or (d) either party's gross negligence or wilful misconduct.
+
+10. TERM AND TERMINATION
+
+10.1 Term: This Agreement commences on the Effective Date and continues until all Order Forms have expired or been terminated, unless earlier terminated.
+
+10.2 Termination for Cause: Either party may terminate this Agreement upon 30 days' written notice if the other party commits a material breach that remains uncured at the end of that notice period.
+
+10.3 Termination for Insolvency: Either party may terminate immediately if the other party becomes insolvent, makes an assignment for creditors, or has a receiver appointed.
+
+10.4 Effect of Termination: Upon expiration or termination: (a) all licences granted hereunder terminate; (b) each party returns or destroys the other's Confidential Information; and (c) Customer's data will be made available for export for 30 days, after which Provider may delete it.
+
+10.5 Survival: Sections 5, 6, 9, 10.4, and 11 survive expiration or termination.
+
+11. GENERAL
+
+11.1 Governing Law and Venue: This Agreement is governed by the laws of [Jurisdiction] without regard to conflict of laws principles. Disputes shall be resolved exclusively in the courts of [Venue], and each party consents to personal jurisdiction therein.
+
+11.2 Notices: Legal notices shall be in writing and delivered by email to the addresses on the most recent Order Form, with confirmation of receipt, or by overnight courier. Notices are effective upon receipt.
+
+11.3 Assignment: Neither party may assign this Agreement without the other's prior written consent, except in connection with a merger, acquisition, or sale of all or substantially all of a party's assets.
+
+11.4 Entire Agreement: This Agreement, together with all Order Forms and exhibits, constitutes the entire agreement between the parties regarding its subject matter and supersedes all prior agreements.
+
+11.5 Amendment and Waiver: This Agreement may only be amended by a written instrument signed by authorised representatives of both parties. Failure to enforce any provision is not a waiver.
+
+11.6 Force Majeure: Neither party is liable for delays or failures in performance caused by circumstances beyond its reasonable control, provided it notifies the other party promptly and uses commercially reasonable efforts to mitigate.
+
+11.7 Relationship: The parties are independent contractors. Nothing herein creates an employment, partnership, joint venture, or agency relationship.
+
+ORDER FORM TEMPLATE
+
+Order Form #: [Number]
+Effective Date: [Date]
+Agreement: Master Service Agreement dated [MSA Date]
+
+CUSTOMER:
+Company Name:
+Address:
+Billing Contact:
+Technical Contact:
+
+SERVICES:
+Product: [Product Name]
+Plan: [Starter / Professional / Enterprise]
+Number of Users: [X]
+Subscription Term: [12 months] from [Start Date]
+Auto-Renewal: [Yes / No]
+
+FEES:
+Annual Subscription Fee: $[Amount]
+Payment Schedule: [Annual in advance / Quarterly]
+Invoice Date: [Date]
+
+SPECIAL TERMS:
+[Any custom terms, discounts, or implementation services]
+
+SIGNATURES:
+Provider: [Company Name]
+By: ___________________________ Date: ___________
+Name:
+Title:
+
+Customer: [Customer Name]
+By: ___________________________ Date: ___________
+Name:
+Title:
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">1</span> Services and Licence Grant</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Subject to the terms of this Agreement and payment of applicable fees, Provider grants Customer a non-exclusive, non-transferable, non-sublicensable licence to access and use the Services during the term solely for Customer's internal business purposes.
+
+Customer shall not: (a) sublicence, resell, or distribute the Services; (b) reverse engineer or attempt to derive source code; (c) use the Services to build a competing product; (d) share access credentials with non-Authorised Users; or (e) use the Services in violation of applicable laws.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Precisely defines what the customer can and cannot do with your software. The "internal business purposes only" restriction prevents customers from reselling or white-labelling your product without a specific agreement. "Build a competing product" restriction is increasingly standard in SaaS but can be challenged as overly broad — have your lawyer review based on your specific market.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">2</span> Mutual Indemnification</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Provider shall defend, indemnify, and hold harmless Customer against third-party claims alleging that the Services, as provided and used in accordance with this Agreement, infringe a third party's intellectual property rights.
+
+Customer shall defend, indemnify, and hold harmless Provider against third-party claims arising from: (a) Customer Data; (b) Customer's use of the Services in violation of this Agreement or applicable law; or (c) Customer's products and services.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> You indemnify the customer against IP infringement claims (standard for SaaS vendors). The customer indemnifies you against claims arising from their data or misuse. This section is heavily negotiated — large enterprises often try to remove their indemnity obligations entirely. The "used in accordance with this Agreement" qualifier is critical — it removes your obligation if the customer used your product in an unauthorised way that caused the infringement.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">3</span> Limitation of Liability</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">NEITHER PARTY WILL BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM THIS AGREEMENT, EVEN IF ADVISED OF THEIR POSSIBILITY.
+
+EACH PARTY'S TOTAL CUMULATIVE LIABILITY ARISING FROM OR RELATING TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY CUSTOMER IN THE 12 MONTHS PRECEDING THE CLAIM.
+
+Exceptions: These limitations do not apply to: (a) indemnification obligations; (b) breach of confidentiality; (c) customer's payment obligations; or (d) either party's gross negligence or wilful misconduct.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> The mutual liability cap is typical in enterprise SaaS. Note that indemnification is carved out from the cap — this is important because an IP infringement case could involve millions in third-party damages. Enterprise customers often negotiate higher caps (e.g., 2× or 3× annual fees) for enterprise deals. The gross negligence carve-out is essentially required — no court will enforce a cap on wilful bad acts.</div>
+        </div>
+      </div>
+
+      <div class="clause">
+        <div class="clause-header" onclick="toggleClause(this)">
+          <div class="clause-title"><span class="clause-num">4</span> Aggregated Data Rights</div>
+          <div class="clause-toggle">▼</div>
+        </div>
+        <div class="clause-body">
+          <button class="clause-copy-btn" onclick="copyClause(this)">Copy Clause</button>
+          <div class="clause-text">Provider may use anonymised, aggregated usage data that does not identify Customer or its users for the purpose of improving the Services and for industry benchmarking.</div>
+          <div class="clause-annotation"><strong>What this does:</strong> Allows you to use aggregated, anonymised data from all customers to improve your product and publish industry benchmarks. This is valuable for product analytics. Enterprise customers sometimes object to this — some will require a specific prohibition on using their data even in aggregated form. Be prepared to remove this clause in sensitive enterprise deals. Ensure "anonymised" is genuinely anonymised — re-identification risk is a GDPR concern.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(109,40,217,0.05) 100%); border: 1px solid var(--accent); border-radius: 16px; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+      <h2 style="font-size: 22px; margin-bottom: 10px;">Get all 6 templates in one pack</h2>
+      <p style="color: var(--muted); margin-bottom: 24px; max-width: 440px; margin-left: auto; margin-right: auto;">ToS, Privacy Policy, DPA, SLA, NDA, and MSA — fully written and ready to adapt with your lawyer. One-time payment, yours to keep.</p>
+      <a href="https://paypal.me/mrbtmkhabela/79USD" target="_blank" style="display:inline-block; background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; transition: background 0.15s;">
+        💳 Get the Full Pack — $79
+      </a>
+      <p style="color: var(--muted); font-size: 12px; margin-top: 12px;">One-time payment via PayPal. Instant access.</p>
+      <p style="color: var(--muted); font-size: 11px; margin-top: 6px;">These are starting-point templates. Always have a qualified lawyer review before use.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  function toggleClause(header) {
+    const body = header.nextElementSibling;
+    const toggle = header.querySelector('.clause-toggle');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    toggle.classList.toggle('open', !isOpen);
+  }
+
+  function copyClause(btn) {
+    const clauseText = btn.closest('.clause-body').querySelector('.clause-text');
+    navigator.clipboard.writeText(clauseText.textContent.trim()).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  function copyFullTemplate(id) {
+    const el = document.getElementById(id);
+    navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+      const btn = event.currentTarget;
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 3000);
+    });
+  }
+
+  function doSearch(query) {
+    const q = query.toLowerCase().trim();
+    const sections = document.querySelectorAll('.section');
+    if (!q) {
+      sections.forEach(s => s.classList.remove('search-hidden'));
+      return;
+    }
+    sections.forEach(section => {
+      const text = section.textContent.toLowerCase();
+      section.classList.toggle('search-hidden', !text.includes(q));
+    });
+  }
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('.section, .hero');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 60) current = section.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Open first clause of each template by default
+  document.querySelectorAll('.clause:first-of-type .clause-header').forEach(h => {
+    const body = h.nextElementSibling;
+    const toggle = h.querySelector('.clause-toggle');
+    if (body && toggle) {
+      body.classList.add('open');
+      toggle.classList.add('open');
+    }
+  });
+</script>
+</body>
+</html>

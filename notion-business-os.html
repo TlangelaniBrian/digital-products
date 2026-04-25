@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notion Business OS 2025 — $49</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #09090b;
+    --surface: #18181b;
+    --surface2: #27272a;
+    --border: #3f3f46;
+    --accent: #8b5cf6;
+    --accent-dim: #6d28d9;
+    --accent-glow: rgba(139,92,246,0.15);
+    --text: #fafafa;
+    --muted: #a1a1aa;
+    --green: #22c55e;
+    --amber: #f59e0b;
+    --sidebar-width: 280px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: var(--sidebar-width);
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-header {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .sidebar-logo .icon {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .sidebar-logo .name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .sidebar-logo .name span {
+    display: block;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 11px;
+  }
+
+  .price-badge {
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  .search-box {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .search-box input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px 8px 34px;
+    color: var(--text);
+    font-size: 13px;
+    outline: none;
+    position: relative;
+  }
+
+  .search-wrap {
+    position: relative;
+  }
+
+  .search-wrap::before {
+    content: '⌕';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 16px;
+    z-index: 1;
+  }
+
+  .search-box input:focus {
+    border-color: var(--accent);
+  }
+
+  .nav {
+    flex: 1;
+    padding: 12px 12px;
+    overflow-y: auto;
+  }
+
+  .nav-section {
+    margin-bottom: 4px;
+  }
+
+  .nav-section-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 8px 8px 4px;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    background: var(--accent-glow);
+    color: var(--text);
+  }
+
+  .nav-link.active {
+    color: var(--accent);
+  }
+
+  .nav-link .emoji {
+    font-size: 14px;
+    width: 20px;
+    text-align: center;
+  }
+
+  .sidebar-cta {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .buy-btn {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+  }
+
+  .buy-btn:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    max-width: 860px;
+    padding: 48px 48px 80px;
+  }
+
+  /* HERO */
+  .hero {
+    margin-bottom: 56px;
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--text) 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat .num {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat .label {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 64px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon {
+    width: 44px; height: 44px;
+    background: var(--accent-glow);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .section-header .section-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card p { color: var(--muted); margin-bottom: 12px; font-size: 14px; }
+
+  /* STEPS */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+  }
+
+  .step {
+    counter-increment: step;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .step::before {
+    content: counter(step);
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .step-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* CODE BLOCKS */
+  .code-block {
+    background: #0d0d10;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .code-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .copy-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 12px;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+
+  .copy-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .copy-btn.copied {
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .code-block pre {
+    padding: 16px;
+    overflow-x: auto;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #e2e8f0;
+  }
+
+  .code-block code .kw { color: #c084fc; }
+  .code-block code .str { color: #86efac; }
+  .code-block code .num { color: #fdba74; }
+  .code-block code .fn { color: #67e8f9; }
+  .code-block code .cm { color: #6b7280; font-style: italic; }
+
+  /* PROPERTY TABLE */
+  .prop-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 16px 0;
+    background: var(--surface);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .prop-table th {
+    background: var(--surface2);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prop-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    vertical-align: top;
+  }
+
+  .prop-table tr:last-child td { border-bottom: none; }
+  .prop-table td:first-child { color: var(--text); font-weight: 500; }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  .tag-select { background: rgba(139,92,246,0.15); color: #a78bfa; }
+  .tag-formula { background: rgba(34,197,94,0.15); color: #86efac; }
+  .tag-relation { background: rgba(245,158,11,0.15); color: #fcd34d; }
+  .tag-rollup { background: rgba(59,130,246,0.15); color: #93c5fd; }
+  .tag-text { background: rgba(161,161,170,0.15); color: #a1a1aa; }
+  .tag-date { background: rgba(236,72,153,0.15); color: #f9a8d4; }
+  .tag-number { background: rgba(34,197,94,0.15); color: #86efac; }
+  .tag-checkbox { background: rgba(14,165,233,0.15); color: #7dd3fc; }
+
+  /* TIPS */
+  .tip {
+    background: rgba(139,92,246,0.08);
+    border: 1px solid rgba(139,92,246,0.25);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .tip strong { color: var(--accent); }
+
+  .warning {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .warning strong { color: var(--amber); }
+
+  /* VISUAL RESULT */
+  .visual-result {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+
+  .visual-result-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .visual-result-label::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* GRID */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  /* FORMULA GRID */
+  .formula-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .formula-title {
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .formula-title .num-badge {
+    width: 22px; height: 22px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .formula-desc {
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* AUTOMATION CARD */
+  .automation-item {
+    display: flex;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .automation-icon {
+    width: 36px; height: 36px;
+    background: var(--accent-glow);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .automation-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .automation-content p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* SEARCH HIGHLIGHT */
+  .search-hidden { display: none !important; }
+
+  mark {
+    background: rgba(139,92,246,0.3);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 24px 20px 60px; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="icon">🗂️</div>
+      <div class="name">
+        Notion Business OS
+        <span>2025 Edition</span>
+      </div>
+    </div>
+    <span class="price-badge">$49 One-Time</span>
+  </div>
+
+  <div class="search-box">
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search sections..." oninput="doSearch(this.value)">
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <a class="nav-link active" onclick="scrollTo('hero')">
+        <span class="emoji">🏠</span> Introduction
+      </a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Core System</div>
+      <a class="nav-link" onclick="scrollTo('databases')">
+        <span class="emoji">🗄️</span> 5-Database Core
+      </a>
+      <a class="nav-link" onclick="scrollTo('crm')">
+        <span class="emoji">🤝</span> CRM Setup
+      </a>
+      <a class="nav-link" onclick="scrollTo('projects')">
+        <span class="emoji">📋</span> Project Management
+      </a>
+      <a class="nav-link" onclick="scrollTo('content')">
+        <span class="emoji">📝</span> Content Calendar
+      </a>
+      <a class="nav-link" onclick="scrollTo('finance')">
+        <span class="emoji">💰</span> Finance Tracker
+      </a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Team & Process</div>
+      <a class="nav-link" onclick="scrollTo('wiki')">
+        <span class="emoji">📚</span> Team Wiki
+      </a>
+      <a class="nav-link" onclick="scrollTo('weekly')">
+        <span class="emoji">🔄</span> Weekly Review
+      </a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Power Features</div>
+      <a class="nav-link" onclick="scrollTo('formulas')">
+        <span class="emoji">🧮</span> 20 Formulas
+      </a>
+      <a class="nav-link" onclick="scrollTo('automations')">
+        <span class="emoji">⚡</span> 10 Automations
+      </a>
+    </div>
+  </nav>
+
+  <div class="sidebar-cta">
+    <a href="https://paypal.me/mrbtmkhabela/49USD" target="_blank" class="buy-btn">
+      💳 Get Full Access — $49
+    </a>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-badge">✦ Complete System &bull; Copy-Paste Ready &bull; 2025 Updated</div>
+    <h1>Notion Business OS 2025</h1>
+    <p>A complete, battle-tested workspace system for solopreneurs and small teams. Five interconnected databases, 20 real formulas, automated workflows — everything you need to run your business inside Notion.</p>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">5</span><span class="label">Core Databases</span></div>
+      <div class="stat"><span class="num">20</span><span class="label">Copy-Ready Formulas</span></div>
+      <div class="stat"><span class="num">10</span><span class="label">Automation Ideas</span></div>
+      <div class="stat"><span class="num">50+</span><span class="label">Property Templates</span></div>
+    </div>
+  </section>
+
+  <!-- 5-DATABASE CORE -->
+  <section class="section" id="databases">
+    <div class="section-header">
+      <div class="section-icon">🗄️</div>
+      <div>
+        <h2>The 5-Database Core</h2>
+        <div class="section-meta">The backbone of your entire Notion OS — build these first</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); margin-bottom:20px;">Everything in your Business OS flows through five master databases. Each database links to the others, creating a living system where information surfaces automatically where you need it.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>📋 Projects</h3>
+        <p>The command centre. Every piece of work lives here. Tasks, CRM contacts, and content all relation back to a Project.</p>
+      </div>
+      <div class="card">
+        <h3>✅ Tasks</h3>
+        <p>Granular action items linked to Projects. Filtered views surface your daily priorities automatically.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 CRM</h3>
+        <p>People and companies you work with. Clients, prospects, partners — with deal stage and revenue tracking.</p>
+      </div>
+      <div class="card">
+        <h3>📝 Content</h3>
+        <p>Every piece of content across every platform, with status workflow and scheduling built in.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>💰 Finance</h3>
+      <p>Revenue, expenses, invoices, and MRR tracking. Formulas compute profit margin and monthly summaries automatically. Linked to CRM so you know revenue per client.</p>
+    </div>
+
+    <div class="tip"><strong>Start here:</strong> Create the Projects database first, then build all other databases and add Relations pointing back to Projects. This establishes the hierarchy.</div>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Quick Setup Order</h3>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-content">
+          <h4>Create a new Notion page called "Business OS"</h4>
+          <p>Use a full-width page. This will be your master workspace. Pin it to your sidebar.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Create each database as an inline database on this page</h4>
+          <p>Type /database and choose "Table view — Full page". Name each: Projects, Tasks, CRM, Content, Finance.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Add Relations between databases</h4>
+          <p>In Tasks: add a Relation to Projects. In CRM: add a Relation to Projects. In Content: add a Relation to Projects. In Finance: add a Relation to CRM.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Create a Master Dashboard page</h4>
+          <p>Create a new page and add Linked Database views showing filtered slices of each database. This becomes your daily homepage.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- CRM -->
+  <section class="section" id="crm">
+    <div class="section-header">
+      <div class="section-icon">🤝</div>
+      <div>
+        <h2>CRM Setup</h2>
+        <div class="section-meta">Properties, views, formulas, and automation triggers</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); margin-bottom:20px;">Your CRM replaces expensive tools like HubSpot for early-stage businesses. It tracks people, deals, and revenue — all linked to your projects and finance tracker.</p>
+
+    <h3 style="margin-bottom:12px; font-size:16px;">Required Properties</h3>
+    <table class="prop-table">
+      <thead>
+        <tr>
+          <th>Property Name</th>
+          <th>Type</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><span class="tag tag-text">Title</span></td>
+          <td>Contact or company name</td>
+        </tr>
+        <tr>
+          <td>Type</td>
+          <td><span class="tag tag-select">Select</span></td>
+          <td>Client / Prospect / Partner / Vendor</td>
+        </tr>
+        <tr>
+          <td>Stage</td>
+          <td><span class="tag tag-select">Select</span></td>
+          <td>Lead → Qualified → Proposal → Negotiation → Won → Lost</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><span class="tag tag-text">Email</span></td>
+          <td>Primary contact email</td>
+        </tr>
+        <tr>
+          <td>Company</td>
+          <td><span class="tag tag-text">Text</span></td>
+          <td>Company name if contact-level entry</td>
+        </tr>
+        <tr>
+          <td>Deal Value</td>
+          <td><span class="tag tag-number">Number</span></td>
+          <td>Estimated or contracted deal size</td>
+        </tr>
+        <tr>
+          <td>Monthly Value</td>
+          <td><span class="tag tag-number">Number</span></td>
+          <td>Recurring monthly revenue from this client</td>
+        </tr>
+        <tr>
+          <td>Close Date</td>
+          <td><span class="tag tag-date">Date</span></td>
+          <td>Expected or actual deal close date</td>
+        </tr>
+        <tr>
+          <td>Last Contact</td>
+          <td><span class="tag tag-date">Date</span></td>
+          <td>When you last spoke with this contact</td>
+        </tr>
+        <tr>
+          <td>Projects</td>
+          <td><span class="tag tag-relation">Relation</span></td>
+          <td>Linked to Projects database</td>
+        </tr>
+        <tr>
+          <td>Finance Entries</td>
+          <td><span class="tag tag-relation">Relation</span></td>
+          <td>Linked to Finance database</td>
+        </tr>
+        <tr>
+          <td>Total Revenue</td>
+          <td><span class="tag tag-rollup">Rollup</span></td>
+          <td>Sum of Finance Entries → Amount (filtered to Income)</td>
+        </tr>
+        <tr>
+          <td>Days Since Contact</td>
+          <td><span class="tag tag-formula">Formula</span></td>
+          <td>dateBetween(now(), prop("Last Contact"), "days")</td>
+        </tr>
+        <tr>
+          <td>Follow-up Needed</td>
+          <td><span class="tag tag-formula">Formula</span></td>
+          <td>Flags contacts not reached in 14 days</td>
+        </tr>
+        <tr>
+          <td>Notes</td>
+          <td><span class="tag tag-text">Text</span></td>
+          <td>Quick relationship notes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">CRM Views to Create</h3>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-content">
+          <h4>Pipeline Board (Kanban)</h4>
+          <p>Group by: Stage. Show: Name, Type, Deal Value, Close Date. Filter: Type = Client OR Prospect. This is your sales pipeline at a glance.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Follow-up Queue (Table)</h4>
+          <p>Filter: Follow-up Needed = true AND Type != Vendor. Sort: Days Since Contact descending. Shows who needs attention today.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Active Clients (Gallery)</h4>
+          <p>Filter: Stage = Won AND Type = Client. Sort: Monthly Value descending. Quick visual of your revenue base.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Revenue by Client (Table)</h4>
+          <p>Filter: Stage = Won. Sort: Total Revenue descending. Shows your best clients by actual revenue earned.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Days Since Last Contact</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>dateBetween(now(), prop("Last Contact"), "days")</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Follow-up Needed Flag</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>if(
+  and(
+    dateBetween(now(), prop("Last Contact"), "days") > 14,
+    prop("Stage") != "Won" and prop("Stage") != "Lost"
+  ),
+  "🔴 Follow up now",
+  if(
+    dateBetween(now(), prop("Last Contact"), "days") > 7,
+    "🟡 Check in soon",
+    "🟢 OK"
+  )
+)</code></pre>
+    </div>
+
+    <div class="visual-result">
+      <div class="visual-result-label">What the final CRM looks like</div>
+      <p style="font-size:13px; color:var(--muted);">Your Pipeline Board shows six columns (Lead → Lost) with cards displaying contact name, deal value, and close date. Each card has a coloured dot for follow-up status. The Follow-up Queue auto-populates with contacts you haven't reached in 14+ days, sorted by urgency. The Revenue by Client view shows a table with a running total of revenue earned per client via the Rollup property.</p>
+    </div>
+
+    <div class="tip"><strong>Scaling tip:</strong> Once you have 20+ clients, add a "Company" database and make CRM contacts relation to companies instead of using a plain text field. This unlocks aggregate deal value per company.</div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <div>
+        <h2>Project Management</h2>
+        <div class="section-meta">Linked databases, status tracking, timeline view</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); margin-bottom:20px;">The Projects database is the hub. Tasks, content, and finance all relate back here. Good project structure means your team always knows what's happening and what's next.</p>
+
+    <h3 style="margin-bottom:12px; font-size:16px;">Projects Database Properties</h3>
+    <table class="prop-table">
+      <thead>
+        <tr><th>Property</th><th>Type</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Project Name</td><td><span class="tag tag-text">Title</span></td><td>Use format: [Client] — Project Name</td></tr>
+        <tr><td>Status</td><td><span class="tag tag-select">Select</span></td><td>Backlog / Active / In Review / Completed / On Hold</td></tr>
+        <tr><td>Priority</td><td><span class="tag tag-select">Select</span></td><td>🔴 High / 🟡 Medium / 🟢 Low</td></tr>
+        <tr><td>Client</td><td><span class="tag tag-relation">Relation</span></td><td>Linked to CRM database</td></tr>
+        <tr><td>Start Date</td><td><span class="tag tag-date">Date</span></td><td>Project kick-off date</td></tr>
+        <tr><td>Due Date</td><td><span class="tag tag-date">Date</span></td><td>Final delivery deadline</td></tr>
+        <tr><td>Tasks</td><td><span class="tag tag-relation">Relation</span></td><td>Linked to Tasks database (two-way)</td></tr>
+        <tr><td>Task Count</td><td><span class="tag tag-rollup">Rollup</span></td><td>Count of all Tasks</td></tr>
+        <tr><td>Done Tasks</td><td><span class="tag tag-rollup">Rollup</span></td><td>Count of Tasks where Status = Done</td></tr>
+        <tr><td>Progress %</td><td><span class="tag tag-formula">Formula</span></td><td>Done Tasks ÷ Task Count × 100</td></tr>
+        <tr><td>Days Until Due</td><td><span class="tag tag-formula">Formula</span></td><td>dateBetween(prop("Due Date"), now(), "days")</td></tr>
+        <tr><td>Health</td><td><span class="tag tag-formula">Formula</span></td><td>Risk indicator based on due date + progress</td></tr>
+        <tr><td>Budget</td><td><span class="tag tag-number">Number</span></td><td>Total project budget (currency)</td></tr>
+        <tr><td>Billed</td><td><span class="tag tag-rollup">Rollup</span></td><td>Sum of Finance entries linked to this project</td></tr>
+        <tr><td>Owner</td><td><span class="tag tag-text">Person</span></td><td>Who's responsible for this project</td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Progress Bar</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>if(
+  prop("Task Count") == 0,
+  "No tasks yet",
+  format(round(prop("Done Tasks") / prop("Task Count") * 100)) + "% complete"
+)</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Project Health Indicator</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>if(
+  prop("Status") == "Completed",
+  "✅ Done",
+  if(
+    prop("Days Until Due") < 0,
+    "🔴 Overdue",
+    if(
+      and(
+        prop("Days Until Due") < 7,
+        prop("Progress %") < 70
+      ),
+      "🟠 At Risk",
+      if(
+        prop("Days Until Due") < 14,
+        "🟡 Watch",
+        "🟢 On Track"
+      )
+    )
+  )
+)</code></pre>
+    </div>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Project Views</h3>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-content">
+          <h4>Board by Status (Default View)</h4>
+          <p>Kanban grouped by Status. Show Health, Priority, Due Date, Owner. Filter out Completed projects by default — use a separate "Archive" view for those.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Timeline View</h4>
+          <p>Switch to Timeline view. Set the date range to Start Date → Due Date. Group by Owner. This gives you a Gantt-style overview of all active work.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>My Projects (Filtered)</h4>
+          <p>Filter: Owner = Me AND Status != Completed. This becomes your personal project dashboard.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="tip"><strong>Linking tip:</strong> When you create a Task, always set the Project relation first. This lets you use filtered Linked Database views on each Project page to show only that project's tasks.</div>
+  </section>
+
+  <!-- CONTENT CALENDAR -->
+  <section class="section" id="content">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <div>
+        <h2>Content Calendar</h2>
+        <div class="section-meta">Multi-platform planning, status workflow, scheduling</div>
+      </div>
+    </div>
+
+    <table class="prop-table">
+      <thead><tr><th>Property</th><th>Type</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Title</td><td><span class="tag tag-text">Title</span></td><td>Working title of the content piece</td></tr>
+        <tr><td>Platform</td><td><span class="tag tag-select">Select</span></td><td>LinkedIn / Twitter/X / Instagram / YouTube / Blog / Newsletter / TikTok</td></tr>
+        <tr><td>Content Type</td><td><span class="tag tag-select">Select</span></td><td>Post / Thread / Video / Article / Email / Reel / Carousel</td></tr>
+        <tr><td>Status</td><td><span class="tag tag-select">Select</span></td><td>Idea → Drafting → Review → Scheduled → Published → Repurpose</td></tr>
+        <tr><td>Publish Date</td><td><span class="tag tag-date">Date</span></td><td>When to publish — drives calendar view</td></tr>
+        <tr><td>Topic / Pillar</td><td><span class="tag tag-select">Select</span></td><td>Your content pillars — e.g. Education, Personal, Promotional, Behind the Scenes</td></tr>
+        <tr><td>Project</td><td><span class="tag tag-relation">Relation</span></td><td>Link to related Project if applicable</td></tr>
+        <tr><td>Hook</td><td><span class="tag tag-text">Text</span></td><td>Opening line / hook idea — fill this early</td></tr>
+        <tr><td>CTA</td><td><span class="tag tag-text">Text</span></td><td>Call to action for this piece</td></tr>
+        <tr><td>Days Until Publish</td><td><span class="tag tag-formula">Formula</span></td><td>dateBetween(prop("Publish Date"), now(), "days")</td></tr>
+        <tr><td>Is Late</td><td><span class="tag tag-formula">Formula</span></td><td>Flags drafts not done 2 days before publish date</td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Content Urgency Flag</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>if(
+  prop("Status") == "Published",
+  "✅ Published",
+  if(
+    prop("Days Until Publish") < 0,
+    "🔴 Overdue — post now",
+    if(
+      and(
+        prop("Days Until Publish") <= 2,
+        prop("Status") != "Scheduled"
+      ),
+      "⚠️ Finalise today",
+      if(
+        prop("Days Until Publish") <= 7,
+        "📝 In progress",
+        "🗓️ Planned"
+      )
+    )
+  )
+)</code></pre>
+    </div>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Content Views</h3>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-content">
+          <h4>Calendar View (Primary)</h4>
+          <p>Switch to Calendar view, date by Publish Date. This is your publishing schedule at a glance. Colour-code by Platform for visual clarity.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Production Board (Kanban)</h4>
+          <p>Group by Status. Filter out Published. This is your content production pipeline. Move cards through columns as work progresses.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>By Platform (Gallery)</h4>
+          <p>Gallery view with Platform as cover text. Filter by each platform to see what's queued per channel.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Repurpose Queue</h4>
+          <p>Filter: Status = Repurpose. These are published pieces identified for transformation into new formats — your highest-leverage content action.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="tip"><strong>Workflow tip:</strong> Add a "Content Brief" template to your Content database. Set the template to auto-fill a standard structure: Hook, Body outline, CTA, Visual notes. This saves 10–15 minutes per piece.</div>
+  </section>
+
+  <!-- FINANCE -->
+  <section class="section" id="finance">
+    <div class="section-header">
+      <div class="section-icon">💰</div>
+      <div>
+        <h2>Finance Tracker</h2>
+        <div class="section-meta">Revenue, expenses, profit formula, MRR tracking</div>
+      </div>
+    </div>
+
+    <table class="prop-table">
+      <thead><tr><th>Property</th><th>Type</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Description</td><td><span class="tag tag-text">Title</span></td><td>What this transaction is for</td></tr>
+        <tr><td>Type</td><td><span class="tag tag-select">Select</span></td><td>Income / Expense / Refund / Transfer</td></tr>
+        <tr><td>Category</td><td><span class="tag tag-select">Select</span></td><td>Software / Contractor / Marketing / Salary / Revenue / Tax etc.</td></tr>
+        <tr><td>Amount</td><td><span class="tag tag-number">Number</span></td><td>Always positive — Type determines direction</td></tr>
+        <tr><td>Date</td><td><span class="tag tag-date">Date</span></td><td>Transaction date</td></tr>
+        <tr><td>Recurring</td><td><span class="tag tag-checkbox">Checkbox</span></td><td>Is this a recurring charge?</td></tr>
+        <tr><td>Frequency</td><td><span class="tag tag-select">Select</span></td><td>Monthly / Annual / One-time</td></tr>
+        <tr><td>Monthly Amount</td><td><span class="tag tag-formula">Formula</span></td><td>Normalises annual to monthly for MRR calc</td></tr>
+        <tr><td>Client</td><td><span class="tag tag-relation">Relation</span></td><td>Linked to CRM database</td></tr>
+        <tr><td>Project</td><td><span class="tag tag-relation">Relation</span></td><td>Linked to Projects database</td></tr>
+        <tr><td>Month</td><td><span class="tag tag-formula">Formula</span></td><td>formatDate(prop("Date"), "YYYY-MM") — groups by month</td></tr>
+        <tr><td>Invoice #</td><td><span class="tag tag-text">Text</span></td><td>Invoice number for income entries</td></tr>
+        <tr><td>Paid</td><td><span class="tag tag-checkbox">Checkbox</span></td><td>Has this been paid / received?</td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Monthly Normalised Amount (for MRR)</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>if(
+  prop("Frequency") == "Annual",
+  round(prop("Amount") / 12),
+  if(
+    prop("Frequency") == "Monthly",
+    prop("Amount"),
+    0
+  )
+)</code></pre>
+    </div>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Formula — Month Label (for grouping)</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>formatDate(prop("Date"), "YYYY-MM")</code></pre>
+    </div>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Finance Views</h3>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-content">
+          <h4>Monthly P&amp;L (Table, Grouped by Month)</h4>
+          <p>Group by: Month formula. Sub-group by: Type. Sum: Amount. This gives you monthly income vs expenses with totals per month — your P&L statement.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>MRR Dashboard (Table, Filtered)</h4>
+          <p>Filter: Recurring = true AND Type = Income. Sum: Monthly Amount. This shows your Monthly Recurring Revenue from subscriptions and retainers.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Unpaid Invoices (Table)</h4>
+          <p>Filter: Type = Income AND Paid = false. Sort: Date ascending. This is your accounts receivable list — review weekly.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="warning"><strong>Important:</strong> This is a tracking system, not accounting software. For tax purposes, always work with an accountant and use formal accounting software (Xero, QuickBooks) as your source of truth.</div>
+  </section>
+
+  <!-- WIKI -->
+  <section class="section" id="wiki">
+    <div class="section-header">
+      <div class="section-icon">📚</div>
+      <div>
+        <h2>Team Wiki Structure</h2>
+        <div class="section-meta">Hierarchy, templates, naming conventions</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); margin-bottom:20px;">A good wiki is findable and maintained. These conventions prevent your team knowledge base from becoming a graveyard of outdated pages.</p>
+
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Recommended Wiki Hierarchy</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code>📚 Wiki
+├── 🏠 Company
+│   ├── Mission & Values
+│   ├── Team Directory
+│   ├── Org Chart
+│   └── Company Policies
+│
+├── 🛠️ How We Work
+│   ├── Onboarding Guide
+│   ├── Communication Standards
+│   ├── Tool Stack & Logins
+│   └── Meeting Templates
+│
+├── 📦 Products & Services
+│   ├── [Product Name] Spec
+│   ├── Pricing Guide
+│   └── Feature Roadmap
+│
+├── 🎯 Marketing
+│   ├── Brand Guidelines
+│   ├── ICP Profile
+│   └── Messaging Playbook
+│
+├── ⚙️ Operations
+│   ├── SOPs (Standard Operating Procedures)
+│   ├── Vendor List
+│   └── Legal & Contracts
+│
+└── 📖 Knowledge Base
+    ├── FAQs
+    ├── Troubleshooting
+    └── Research & Resources</code></pre>
+    </div>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Naming Conventions</h3>
+    <div class="card">
+      <h3>📌 Page Naming Rules</h3>
+      <ul style="color:var(--muted); font-size:14px; padding-left:20px; list-style:disc;">
+        <li style="margin-bottom:8px;"><strong style="color:var(--text);">Evergreen pages:</strong> Plain nouns — "Onboarding Guide", "Pricing Guide"</li>
+        <li style="margin-bottom:8px;"><strong style="color:var(--text);">Dated pages:</strong> YYYY-MM format prefix — "2025-01 Sprint Planning"</li>
+        <li style="margin-bottom:8px;"><strong style="color:var(--text);">Drafts:</strong> Prefix with [DRAFT] — "[DRAFT] Q3 Strategy"</li>
+        <li style="margin-bottom:8px;"><strong style="color:var(--text);">Archived pages:</strong> Move to an Archive sub-page, prefix with [ARCHIVE]</li>
+        <li style="margin-bottom:8px;"><strong style="color:var(--text);">SOPs:</strong> Prefix with SOP — "SOP: Client Onboarding"</li>
+      </ul>
+    </div>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Wiki Page Template</h3>
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Standard Wiki Page Structure (copy to Notion template)</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code># [Page Title]
+
+**Owner:** @Name
+**Last Updated:** [Date]
+**Status:** Live / Draft / Archived
+
+---
+
+## Summary
+One paragraph describing what this page covers and who it's for.
+
+## Content
+[Main content here]
+
+## Related Pages
+- [[Link to related page]]
+- [[Link to related page]]
+
+## Changelog
+| Date | Change | Author |
+|------|--------|--------|
+| 2025-01-01 | Created | @Name |</code></pre>
+    </div>
+
+    <div class="tip"><strong>Maintenance tip:</strong> Add a recurring monthly task in your Tasks database: "Review wiki for outdated pages". Set a 90-day review cycle for each major section. Assign an owner to each wiki section who is responsible for keeping it current.</div>
+  </section>
+
+  <!-- WEEKLY REVIEW -->
+  <section class="section" id="weekly">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <div>
+        <h2>Weekly Review System</h2>
+        <div class="section-meta">Dashboard setup and reflection prompts</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); margin-bottom:20px;">The weekly review is the heartbeat of your Business OS. Block 60 minutes every Friday afternoon. This is when your system pays dividends — surfacing what matters and clearing your mind for the week ahead.</p>
+
+    <h3 style="margin-bottom:12px; font-size:16px;">Weekly Review Dashboard Setup</h3>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-content">
+          <h4>Create a "Weekly Review" page</h4>
+          <p>Use a full-width page. Add Linked Database views from each of your 5 core databases, each pre-filtered for review relevance.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Add: Projects needing attention</h4>
+          <p>Linked database from Projects. Filter: Status = Active AND Health contains "Risk" OR "Overdue". Sort by Days Until Due ascending.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Add: This week's tasks completed</h4>
+          <p>Linked database from Tasks. Filter: Done Date = This week. Shows accomplishments — important for momentum and reporting.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Add: CRM follow-ups needed</h4>
+          <p>Linked database from CRM. Filter: Follow-up Needed contains "Follow up". Review and update Last Contact dates after reaching out.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Add: Content publishing next week</h4>
+          <p>Linked database from Content. Filter: Publish Date = Next 7 days. Ensure all pieces are in "Scheduled" status by end of review.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-content">
+          <h4>Add: Unpaid invoices</h4>
+          <p>Linked database from Finance. Filter: Type = Income AND Paid = false. Follow up on any overdue payments during or after the review.</p>
+        </div>
+      </li>
+    </ol>
+
+    <h3 style="margin: 24px 0 12px; font-size:16px;">Weekly Reflection Prompts</h3>
+    <div class="code-block">
+      <div class="code-header">
+        <span class="code-label">Notion Template — Weekly Review Journal Entry</span>
+        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+      </div>
+      <pre><code># Weekly Review — [Date]
+
+## ⚡ Energy Check (1–10)
+How was my energy this week? ___
+
+## ✅ Wins This Week
+1.
+2.
+3.
+
+## 🚧 What Got Stuck?
+What didn't move forward and why?
+
+## 💡 Key Learnings
+What do I know now that I didn't know Monday?
+
+## 🎯 Top 3 Priorities Next Week
+1. (Project/Task link)
+2. (Project/Task link)
+3. (Project/Task link)
+
+## 💰 Finance Check
+- Revenue this week: $
+- Expenses this week: $
+- Invoices to chase:
+
+## 🤝 Relationships
+Who do I need to follow up with this week?
+
+## 🧠 Brain Dump
+(Clear your mind — anything you're holding onto)</code></pre>
+    </div>
+  </section>
+
+  <!-- FORMULAS -->
+  <section class="section" id="formulas">
+    <div class="section-header">
+      <div class="section-icon">🧮</div>
+      <div>
+        <h2>20 Notion Formulas You'll Actually Use</h2>
+        <div class="section-meta">All copy-paste ready — tested in Notion's formula engine</div>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">1</span> Days Until Deadline</div>
+      <div class="formula-desc">Shows how many days remain until a deadline date. Returns negative for overdue.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>dateBetween(prop("Due Date"), now(), "days")</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">2</span> Overdue Status Badge</div>
+      <div class="formula-desc">Returns a coloured emoji badge based on how urgent/overdue something is.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(
+  prop("Status") == "Done", "✅",
+  if(
+    dateBetween(prop("Due Date"), now(), "days") < 0, "🔴 Overdue",
+    if(
+      dateBetween(prop("Due Date"), now(), "days") <= 3, "🟠 Soon",
+      "🟢 OK"
+    )
+  )
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">3</span> Progress Percentage</div>
+      <div class="formula-desc">Calculates completion % from Done count and Total count rollups. Handles zero-division.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(
+  prop("Total Tasks") == 0,
+  "—",
+  format(round(prop("Completed Tasks") / prop("Total Tasks") * 100)) + "%"
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">4</span> Profit Margin %</div>
+      <div class="formula-desc">Revenue minus expenses divided by revenue — your operating profit margin.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(
+  prop("Revenue") == 0,
+  "No revenue",
+  format(round((prop("Revenue") - prop("Expenses")) / prop("Revenue") * 100)) + "% margin"
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">5</span> Current Month Label</div>
+      <div class="formula-desc">Extracts YYYY-MM from a date for grouping by month in views.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>formatDate(prop("Date"), "YYYY-MM")</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">6</span> Quarter Label</div>
+      <div class="formula-desc">Groups entries by financial quarter for quarterly reviews.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>formatDate(prop("Date"), "YYYY") + " Q" + format(
+  ceil(toNumber(formatDate(prop("Date"), "M")) / 3)
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">7</span> Days Since Created</div>
+      <div class="formula-desc">Shows how old a record is — useful for stale task detection.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>dateBetween(now(), prop("Created time"), "days") + " days ago"</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">8</span> Annual to Monthly Normaliser</div>
+      <div class="formula-desc">Converts annual subscriptions to monthly cost for accurate MRR tracking.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(
+  prop("Billing Cycle") == "Annual",
+  round(prop("Amount") / 12 * 100) / 100,
+  prop("Amount")
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">9</span> Word Count Estimator</div>
+      <div class="formula-desc">Estimates reading time from a character count property.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>format(round(prop("Word Count") / 200)) + " min read"</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">10</span> Urgency Score (Priority × Days Remaining)</div>
+      <div class="formula-desc">Combines priority and time pressure into a single urgency score for sorting.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(prop("Priority") == "🔴 High", 3,
+  if(prop("Priority") == "🟡 Medium", 2, 1)
+) * max(1, 30 - dateBetween(prop("Due Date"), now(), "days"))</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">11</span> Deal Stage Number (for sorting)</div>
+      <div class="formula-desc">Converts pipeline stage text to a number so you can sort by deal progression.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(prop("Stage") == "Lead", 1,
+  if(prop("Stage") == "Qualified", 2,
+    if(prop("Stage") == "Proposal", 3,
+      if(prop("Stage") == "Negotiation", 4,
+        if(prop("Stage") == "Won", 5, 0)
+      )
+    )
+  )
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">12</span> Net Profit (Income minus Expenses)</div>
+      <div class="formula-desc">Simple net calculation from two rollup or number properties.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>prop("Total Income") - prop("Total Expenses")</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">13</span> Is This Week? (Boolean)</div>
+      <div class="formula-desc">Returns true if a date falls within the current calendar week.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>and(
+  dateBetween(prop("Due Date"), now(), "days") >= 0,
+  dateBetween(prop("Due Date"), now(), "days") <= 7
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">14</span> Budget Remaining</div>
+      <div class="formula-desc">Shows remaining budget as currency and flags if over budget.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(
+  prop("Budget") - prop("Spent") < 0,
+  "🔴 Over by $" + format(abs(prop("Budget") - prop("Spent"))),
+  "✅ $" + format(prop("Budget") - prop("Spent")) + " remaining"
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">15</span> Formatted Currency</div>
+      <div class="formula-desc">Formats a number as a clean dollar amount string.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>"$" + format(round(prop("Amount") * 100) / 100)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">16</span> Task Age Warning</div>
+      <div class="formula-desc">Flags tasks that have been sitting in the backlog too long without progress.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(
+  and(
+    dateBetween(now(), prop("Created time"), "days") > 30,
+    prop("Status") != "Done"
+  ),
+  "⚠️ Stale — " + format(dateBetween(now(), prop("Created time"), "days")) + " days old",
+  ""
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">17</span> Next Follow-up Date</div>
+      <div class="formula-desc">Calculates the recommended next contact date based on relationship type.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>dateAdd(
+  prop("Last Contact"),
+  if(prop("Type") == "Client", 14,
+    if(prop("Type") == "Prospect", 7, 30)
+  ),
+  "days"
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">18</span> Content Pillar Emoji</div>
+      <div class="formula-desc">Maps content pillar text to a representative emoji for visual identification.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(prop("Pillar") == "Education", "🎓",
+  if(prop("Pillar") == "Personal", "👤",
+    if(prop("Pillar") == "Promotional", "📣",
+      if(prop("Pillar") == "Behind the Scenes", "🎬", "📌")
+    )
+  )
+)</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">19</span> Sprint Week Number</div>
+      <div class="formula-desc">Returns the ISO week number of a date — useful for sprint planning.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>"Week " + formatDate(prop("Due Date"), "WW")</code></pre>
+      </div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-title"><span class="num-badge">20</span> Relationship Health Score</div>
+      <div class="formula-desc">Composite score combining days since contact, deal stage, and revenue — your most important clients rise to the top.</div>
+      <div class="code-block" style="margin:0; border-radius:0 0 10px 10px; border-top:0;">
+        <div class="code-header">
+          <span class="code-label">Notion Formula</span>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre><code>if(prop("Stage") == "Won", 10, 5)
++ if(prop("Total Revenue") > 10000, 5,
+    if(prop("Total Revenue") > 1000, 3, 1))
+- min(10, round(prop("Days Since Contact") / 7))</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMATIONS -->
+  <section class="section" id="automations">
+    <div class="section-header">
+      <div class="section-icon">⚡</div>
+      <div>
+        <h2>10 Automation Ideas</h2>
+        <div class="section-meta">Using Notion's built-in automation engine</div>
+      </div>
+    </div>
+
+    <p style="color:var(--muted); margin-bottom:20px;">Notion's built-in automations (Settings → Automations) let you trigger actions when properties change. Here are 10 automations that save real time.</p>
+
+    <div class="automation-item">
+      <div class="automation-icon">🎯</div>
+      <div class="automation-content">
+        <h4>1. Auto-assign tasks when project becomes Active</h4>
+        <p><strong>Trigger:</strong> Project Status changes to "Active" → <strong>Action:</strong> Find all linked Tasks, assign to Project Owner. Ensures tasks are never orphaned.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">✅</div>
+      <div class="automation-content">
+        <h4>2. Mark project complete when all tasks are done</h4>
+        <p><strong>Trigger:</strong> Progress % formula = 100% → <strong>Action:</strong> Set Project Status to "Completed". Auto-closes projects when work is finished.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">📧</div>
+      <div class="automation-content">
+        <h4>3. Notify owner when task is assigned to them</h4>
+        <p><strong>Trigger:</strong> Task Owner property changes → <strong>Action:</strong> Notify new owner via Notion notification. Keeps the team informed without Slack noise.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">📅</div>
+      <div class="automation-content">
+        <h4>4. Create weekly review entry every Friday</h4>
+        <p><strong>Trigger:</strong> Schedule — Every Friday at 9am → <strong>Action:</strong> Create new page in Weekly Reviews database with the review template pre-filled.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">💰</div>
+      <div class="automation-content">
+        <h4>5. Flag invoice as overdue after 30 days unpaid</h4>
+        <p><strong>Trigger:</strong> Finance entry — Date is 30 days before today AND Paid = false → <strong>Action:</strong> Set a "Overdue" property and notify owner.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">🤝</div>
+      <div class="automation-content">
+        <h4>6. Move deal to Lost if not updated in 30 days</h4>
+        <p><strong>Trigger:</strong> CRM entry Last Edited > 30 days ago AND Stage = Proposal → <strong>Action:</strong> Set Stage to "Lost" and add a note. Keeps your pipeline clean.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">📝</div>
+      <div class="automation-content">
+        <h4>7. Auto-create tasks when project status changes to Active</h4>
+        <p><strong>Trigger:</strong> Project Status becomes "Active" → <strong>Action:</strong> Create standard onboarding tasks from a template. Ensures no kickoff steps are missed.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">🔔</div>
+      <div class="automation-content">
+        <h4>8. Remind owner 3 days before task due date</h4>
+        <p><strong>Trigger:</strong> Task Due Date is 3 days from today AND Status != Done → <strong>Action:</strong> Notify Task Owner. Prevents last-minute deadline surprises.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">📊</div>
+      <div class="automation-content">
+        <h4>9. Create monthly finance summary entry</h4>
+        <p><strong>Trigger:</strong> Schedule — First day of each month → <strong>Action:</strong> Create a "Monthly Summary" entry in Finance with the month label pre-filled. You fill in the rollup totals manually.</p>
+      </div>
+    </div>
+
+    <div class="automation-item">
+      <div class="automation-icon">🚀</div>
+      <div class="automation-content">
+        <h4>10. Promote content to Repurpose queue after publishing</h4>
+        <p><strong>Trigger:</strong> Content Status changes to "Published" → <strong>Action:</strong> After 30 days, set Status to "Repurpose". Keeps high-performing content in rotation automatically.</p>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Automation limits:</strong> Notion's free plan has limited automations. Prioritise #3, #8, and #1 first — they have the highest day-to-day impact. Upgrade to Business plan for unlimited automations and Slack integration.</div>
+
+    <!-- FINAL CTA -->
+    <div style="margin-top: 48px; padding: 32px; background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(109,40,217,0.05) 100%); border: 1px solid var(--accent); border-radius: 16px; text-align: center;">
+      <div style="font-size: 32px; margin-bottom: 12px;">🗂️</div>
+      <h2 style="font-size: 22px; margin-bottom: 10px;">Ready to build your Business OS?</h2>
+      <p style="color: var(--muted); margin-bottom: 24px; max-width: 440px; margin-left: auto; margin-right: auto;">Get instant access to this complete guide and all 20 copy-paste formulas for a one-time payment.</p>
+      <a href="https://paypal.me/mrbtmkhabela/49USD" target="_blank" style="display:inline-block; background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; transition: background 0.15s;">
+        💳 Get Access — $49 One-Time
+      </a>
+      <p style="color: var(--muted); font-size: 12px; margin-top: 12px;">One-time payment via PayPal. Instant access.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  function copyCode(btn) {
+    const pre = btn.closest('.code-block').querySelector('pre');
+    const text = pre.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  function doSearch(query) {
+    const q = query.toLowerCase().trim();
+    const sections = document.querySelectorAll('.section');
+
+    if (!q) {
+      sections.forEach(s => s.classList.remove('search-hidden'));
+      return;
+    }
+
+    sections.forEach(section => {
+      const text = section.textContent.toLowerCase();
+      if (text.includes(q)) {
+        section.classList.remove('search-hidden');
+      } else {
+        section.classList.add('search-hidden');
+      }
+    });
+  }
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('.section, .hero');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 60;
+      if (window.scrollY >= top) {
+        current = section.id;
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
