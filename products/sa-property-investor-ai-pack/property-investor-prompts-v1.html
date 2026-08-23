@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The SA Property Investor AI Pack</title>
+  <style>
+    :root {
+      --ink: #1d1b18;
+      --muted: #6a6258;
+      --paper: #f7f1e8;
+      --card: #fffdfa;
+      --accent: #a95d2d;
+      --accent-dark: #6f3718;
+      --accent-soft: #ead3bf;
+      --border: #dfd1bf;
+      --green: #36543b;
+      --shadow: rgba(71, 49, 28, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, #f0dfcb 0, rgba(240, 223, 203, 0) 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f4ede3 100%);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 24px 96px;
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(22, 20, 18, 0.92), rgba(61, 43, 29, 0.94)),
+        linear-gradient(135deg, #281b13, #4a2d1a);
+      color: #fff8f0;
+      padding: 56px;
+      border-radius: 28px;
+      box-shadow: 0 28px 80px var(--shadow);
+      margin-bottom: 34px;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: auto -100px -100px auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(234, 211, 191, 0.22), rgba(234, 211, 191, 0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font: 700 12px/1.2 Arial, Helvetica, sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f8d9be;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 64px;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      font: 600 24px/1.3 Arial, Helvetica, sans-serif;
+      max-width: 680px;
+      color: #f2e1d0;
+      margin-bottom: 18px;
+    }
+
+    .tagline {
+      max-width: 660px;
+      font: 400 19px/1.6 Arial, Helvetica, sans-serif;
+      color: #faeee3;
+      margin-bottom: 28px;
+    }
+
+    .pillbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font: 600 14px/1.2 Arial, Helvetica, sans-serif;
+      color: #fff7ee;
+    }
+
+    .content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 14px 44px rgba(68, 50, 28, 0.08);
+      padding: 40px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, #fffdfa, #fbf7f1);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    h2 {
+      margin: 40px 0 14px;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--accent-dark);
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 21px;
+      line-height: 1.3;
+      color: #2d241d;
+    }
+
+    p, li {
+      font-size: 17px;
+      color: #2e2924;
+    }
+
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 22px;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+      margin: 18px 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f9f1e8;
+      border: 1px solid #eadbc9;
+      font: 600 15px/1.4 Arial, Helvetica, sans-serif;
+    }
+
+    .section-card {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #fffdfa, #fcf8f3);
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font: 700 12px/1.2 Arial, Helvetica, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .prompt {
+      margin: 14px 0 18px;
+      padding: 16px 18px;
+      background: #f6ede4;
+      border: 1px solid #e8d6c4;
+      border-left: 5px solid var(--accent);
+      border-radius: 14px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      color: #2b2119;
+    }
+
+    .note {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: #eef3ec;
+      border: 1px solid #d5e2d2;
+    }
+
+    .note strong {
+      color: var(--green);
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font: 400 14px/1.6 Arial, Helvetica, sans-serif;
+    }
+
+    @media (max-width: 860px) {
+      .cover { padding: 40px 28px; }
+      h1 { font-size: 46px; }
+      .subtitle { font-size: 21px; }
+      .content { padding: 28px 22px; }
+      .intro-grid, .toc { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+      .cover, .content {
+        box-shadow: none;
+      }
+      .content {
+        border: none;
+      }
+      h2, h3 {
+        page-break-after: avoid;
+      }
+      .section-card, .prompt, .panel, .note {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="cover">
+      <div class="eyebrow">South African Property Toolkit</div>
+      <h1>The SA Property Investor AI Pack</h1>
+      <div class="subtitle">36 practical ChatGPT and Claude prompts for South African rental investors</div>
+      <div class="tagline">Analyse deals faster. Tighten tenant ops. Handle maintenance mess without guessing.</div>
+      <div class="pillbar">
+        <div class="pill">Launch price: R249</div>
+        <div class="pill">Regular price: R399</div>
+        <div class="pill">Deal screening • Tenant ops • Maintenance • Portfolio decisions</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="intro-grid">
+        <div class="panel">
+          <p><strong>This pack is for South African property investors who are tired of messy decisions.</strong></p>
+          <p>It gives you 36 practical prompts you can paste into ChatGPT or Claude to move faster on deal screening, bond and cash-flow thinking, tenant communication, maintenance planning, rental operations, and exit decisions.</p>
+          <p>This is not legal or financial advice. It is an operator pack built to help you think clearly, draft faster, and avoid sloppy admin.</p>
+        </div>
+        <div class="panel">
+          <p><strong>How to use it well</strong></p>
+          <ul>
+            <li>Add the property type, suburb, and city.</li>
+            <li>Use real rent, price, and cost inputs.</li>
+            <li>State your target return and constraints.</li>
+            <li>Replace bracketed placeholders like <code>[PURCHASE_PRICE]</code>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>What’s inside</h2>
+      <ul class="toc">
+        <li>1. Deal Screening</li>
+        <li>2. Finance and Cash Flow</li>
+        <li>3. Due Diligence and Acquisition</li>
+        <li>4. Tenant Operations</li>
+        <li>5. Maintenance and Property Management</li>
+        <li>6. Portfolio and Exit Decisions</li>
+      </ul>
+
+      <div class="note"><strong>Use these like an operator, not a dreamer.</strong> The point is not to sound clever. The point is to avoid weak deals, weak admin, and expensive hesitation.</div>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 1</div>
+        <h2>Deal Screening</h2>
+
+        <h3>1. Quick deal screen</h3>
+        <div class="prompt">Act as a disciplined South African property investment analyst. I am looking at a [PROPERTY_TYPE] in [SUBURB, CITY] for [PURCHASE_PRICE]. Expected gross monthly rent is [RENT]. Monthly rates, levy, insurance, and other fixed costs are [MONTHLY_COSTS]. I want a fast first-pass verdict. Calculate gross yield, rough net cash flow before tax, biggest deal risks, and whether this deserves deeper due diligence. End with one of three verdicts: kill, watch, or pursue.</div>
+
+        <h3>2. Compare two deals</h3>
+        <div class="prompt">Compare these two South African property deals as if you were choosing one for a cash-flow-focused investor. Deal A: [DETAILS]. Deal B: [DETAILS]. Evaluate gross yield, likely net yield, financing risk, tenant-demand risk, maintenance exposure, and resale upside. Recommend the stronger deal and explain why in plain English.</div>
+
+        <h3>3. Area sanity check</h3>
+        <div class="prompt">I am considering buying in [SUBURB, CITY]. Give me a property investor sanity-check framework for this area. Focus on tenant demand, likely vacancy risk, affordability of the target tenant, transport access, crime concerns, school/employment anchors, oversupply risk, and what I should verify before buying.</div>
+
+        <h3>4. Offer price backsolve</h3>
+        <div class="prompt">I need to backsolve the maximum purchase price for a South African rental property. Desired gross monthly rent is [RENT]. My target gross yield is [TARGET_YIELD]% and my buffer for repairs and vacancy is [BUFFER]%. Calculate the maximum purchase price I should pay, then show the numbers for 3 slightly lower offer levels so I can negotiate properly.</div>
+
+        <h3>5. Flip vs hold decision</h3>
+        <div class="prompt">Evaluate whether this South African property should be treated as a flip, a long-term rental, or a pass. Property details: [DETAILS]. Renovation estimate: [RENOVATION_COST]. Likely resale value after upgrade: [ARV]. Likely rent after upgrade: [RENT]. Compare the economics and risk of both strategies and recommend one.</div>
+
+        <h3>6. Red-flag checklist before viewing</h3>
+        <div class="prompt">Build me a pre-viewing red-flag checklist for a South African investment property. I want the list grouped into title/legal, structure, security, utilities, tenantability, sectional-title risks if relevant, and neighbourhood warning signs.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 2</div>
+        <h2>Finance and Cash Flow</h2>
+
+        <h3>7. Bond repayment stress test</h3>
+        <div class="prompt">Using South African property finance assumptions, stress-test this rental deal. Purchase price: [PURCHASE_PRICE]. Deposit: [DEPOSIT]. Interest rate: [RATE]. Loan term: [TERM]. Rent: [RENT]. Monthly non-bond costs: [COSTS]. Show base case, interest-rate-up case, 1-month vacancy case, and repair-shock case. Tell me how fragile the deal is.</div>
+
+        <h3>8. Full monthly cash-flow draft</h3>
+        <div class="prompt">Build a clean monthly rental cash-flow model for this South African property using these inputs: [INPUTS]. Include rent, vacancy allowance, levies, rates, insurance, maintenance reserve, agent fee if any, bond payment, and net cash flow. Also identify which assumptions matter most.</div>
+
+        <h3>9. Deposit decision</h3>
+        <div class="prompt">Should I put down a larger deposit on this South African buy-to-let or keep more cash for reserves and the next deal? Property details: [DETAILS]. Available cash: [CASH]. Compare three scenarios: low deposit, medium deposit, and aggressive deposit. Focus on cash flow, risk, and optionality.</div>
+
+        <h3>10. Emergency reserve target</h3>
+        <div class="prompt">Based on this property portfolio: [DETAILS], calculate a sensible emergency reserve target for a South African rental investor. Explain the minimum, better, and comfortable reserve levels and what each one protects me against.</div>
+
+        <h3>11. Rent increase timing</h3>
+        <div class="prompt">Help me decide whether to increase rent on this property now. Current rent: [RENT]. Market estimate: [MARKET_RENT]. Lease renewal date: [DATE]. Tenant quality: [TENANT_CONTEXT]. Weigh the gain from an increase against vacancy and relationship risk, then suggest a practical number and message angle.</div>
+
+        <h3>12. Buy in personal name vs company</h3>
+        <div class="prompt">Give me a practical decision framework for whether to hold this South African rental property in my personal name or inside a company. Do not pretend there is one universal answer. Compare admin burden, tax considerations to verify with a professional, financing implications, estate-planning logic, and scaling consequences.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 3</div>
+        <h2>Due Diligence and Acquisition</h2>
+
+        <h3>13. Document request list</h3>
+        <div class="prompt">Draft a due-diligence document request list for a South African property purchase. I want it grouped into seller documents, municipal/levy items, lease/tenant items, plans/compliance items, and finance-related documents. Keep it practical and investor-focused.</div>
+
+        <h3>14. Questions for the estate agent</h3>
+        <div class="prompt">Write a sharp list of questions I should send an estate agent about this investment property in South Africa. Property details: [DETAILS]. I want questions that surface motivation, hidden defects, vacancy history, utility problems, body corporate issues, tenant quality, and pricing flexibility.</div>
+
+        <h3>15. Sectional-title risk check</h3>
+        <div class="prompt">I am looking at a sectional-title investment property in South Africa. Create a due-diligence checklist focused on body corporate finances, special levies, conduct rules, maintenance backlogs, reserve fund risk, security issues, and anything that can destroy my yield.</div>
+
+        <h3>16. Tenant-in-place assessment</h3>
+        <div class="prompt">Assess whether buying a South African rental property with an existing tenant in place is attractive in this case. Details: [DETAILS]. Evaluate payment reliability, rent vs market, lease strength, deposit handling, inspection condition, eviction risk if needed, and the likely hassle factor after transfer.</div>
+
+        <h3>17. Negotiation strategy</h3>
+        <div class="prompt">Build a negotiation plan for this South African property deal. Asking price: [ASKING_PRICE]. My ideal price: [IDEAL_PRICE]. Max price: [MAX_PRICE]. Known weaknesses: [WEAKNESSES]. Give me a first offer, fallback positions, leverage points, and when to walk away.</div>
+
+        <h3>18. Renovation scope filter</h3>
+        <div class="prompt">Help me separate cosmetic upgrades from dangerous money pits on this South African property. Known issues: [ISSUES]. Classify each item as cosmetic, necessary before tenanting, compliance/safety, or walk-away risk. Then rank them by urgency and expected return.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 4</div>
+        <h2>Tenant Operations</h2>
+
+        <h3>19. Tenant screening rubric</h3>
+        <div class="prompt">Create a tenant-screening rubric for a South African landlord. I want a scorecard that covers affordability, employment stability, references, payment behaviour, household composition, risk signals, and what would trigger an automatic decline.</div>
+
+        <h3>20. WhatsApp response to a rental enquiry</h3>
+        <div class="prompt">Draft a warm but efficient WhatsApp reply to a prospective tenant asking about this property: [DETAILS]. Ask for the right screening information without sounding hostile or desperate. Keep it concise and professional.</div>
+
+        <h3>21. Viewing-day checklist</h3>
+        <div class="prompt">Build a landlord viewing-day checklist for a South African rental property. Include presentation, safety, documents to carry, questions to ask prospects, and what to note immediately after each viewing so I can compare applicants properly.</div>
+
+        <h3>22. Lease-summary explainer</h3>
+        <div class="prompt">Draft a plain-English lease summary I can send to a prospective tenant before signing. It should explain rent, deposit, due date, utilities, maintenance responsibilities, notice rules, inspection process, and house rules clearly and professionally.</div>
+
+        <h3>23. Rent arrears first message</h3>
+        <div class="prompt">Write a firm but calm first arrears message for a South African tenant who has missed rent. Rent due date was [DATE]. Amount outstanding is [AMOUNT]. I want the tone to be respectful, clear, and legally careful without sounding weak.</div>
+
+        <h3>24. Payment arrangement template</h3>
+        <div class="prompt">Draft a payment-arrangement proposal message for a tenant in South Africa who is behind by [AMOUNT]. Include the acknowledgement of arrears, the exact proposed repayment structure, consequences of default, and a polite request for written confirmation.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 5</div>
+        <h2>Maintenance and Property Management</h2>
+
+        <h3>25. Maintenance triage</h3>
+        <div class="prompt">Act as a pragmatic rental property operator in South Africa. Triage these maintenance issues: [ISSUES]. Sort them into emergency, urgent, can wait, and cosmetic. Explain what should be handled immediately, what can be bundled, and what I should ask a contractor before approving spend.</div>
+
+        <h3>26. Contractor quote comparison</h3>
+        <div class="prompt">Compare these contractor quotes for a South African rental property repair: [QUOTE_A], [QUOTE_B], [QUOTE_C]. Evaluate completeness, hidden omissions, pricing logic, warranty risk, and which contractor looks safest rather than just cheapest.</div>
+
+        <h3>27. Annual maintenance reserve planner</h3>
+        <div class="prompt">Build an annual maintenance reserve plan for this rental property in South Africa. Property type: [TYPE]. Age: [AGE]. Known issues: [KNOWN_ISSUES]. I want a practical reserve estimate, likely problem categories, and a suggested monthly reserve amount.</div>
+
+        <h3>28. Tenant maintenance-response message</h3>
+        <div class="prompt">Draft a tenant update message about a maintenance issue at my South African rental property. Issue: [ISSUE]. Current status: [STATUS]. Expected next step: [NEXT_STEP]. Make it clear, reassuring, and specific so the tenant does not feel ignored.</div>
+
+        <h3>29. Scope of work draft</h3>
+        <div class="prompt">Turn this messy repair brief into a clean contractor scope of work for a South African rental property: [BRIEF]. I want deliverables, exclusions, materials assumptions, start and end expectations, and what evidence of completion I should request.</div>
+
+        <h3>30. Handover inspection list</h3>
+        <div class="prompt">Create a move-in or move-out inspection checklist for a South African rental property. Group items by room, utilities, keys/security, appliances, and damage capture. I want it in a format that can be used during an in-person inspection.</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 6</div>
+        <h2>Portfolio and Exit Decisions</h2>
+
+        <h3>31. Keep, sell, or refinance</h3>
+        <div class="prompt">Help me decide whether to keep, sell, or refinance this South African rental property. Property details: [DETAILS]. Current loan balance: [BALANCE]. Current rent: [RENT]. Condition: [CONDITION]. Alternative use of capital: [ALTERNATIVE]. Compare the three paths and recommend one.</div>
+
+        <h3>32. Portfolio weak-link review</h3>
+        <div class="prompt">Review this rental portfolio like a ruthless operator, not a sentimental owner: [PORTFOLIO_DETAILS]. Identify the weakest property, the strongest property, where hidden concentration risk sits, and what I should fix, sell, or double down on.</div>
+
+        <h3>33. Expansion readiness check</h3>
+        <div class="prompt">Am I actually ready to buy the next South African investment property? Current portfolio and finances: [DETAILS]. Assess cash reserves, management capacity, debt stress, concentration risk, and whether buying again now is disciplined or stupid.</div>
+
+        <h3>34. Exit price target</h3>
+        <div class="prompt">Help me set a realistic exit price strategy for this South African property. Purchase price was [PURCHASE_PRICE]. Current estimated value is [VALUE]. Rent and condition context: [DETAILS]. I want a base-case, optimistic, and fast-sale pricing view, plus what prep work would improve the outcome.</div>
+
+        <h3>35. Investor update message</h3>
+        <div class="prompt">Draft a monthly update I can send to a co-investor or partner on a South African property project. Include occupancy, rent collected, maintenance work, current risks, cash position, and next actions. Keep it crisp and professional.</div>
+
+        <h3>36. Weekly operator review</h3>
+        <div class="prompt">Act as my property operations reviewer. Based on this week’s events across my South African rentals [DETAILS], tell me: 1) what needs attention now, 2) what is drifting, 3) what admin should be automated or templated, and 4) the single highest-leverage action for next week.</div>
+      </section>
+
+      <div class="note"><strong>Final note:</strong> the value here is not just the prompts. It is the speed and clarity they create when you are evaluating deals, speaking to tenants, handling contractors, or deciding whether a property is actually worth the headache.</div>
+
+      <div class="footer">
+        <p>The SA Property Investor AI Pack</p>
+        <p>Prepared as a digital handbook for South African rental investors. Use the prompts, edit the inputs, save the outputs that work, and build your own operator library from there.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
