@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tlangelanibrian.github.io/digital-products/products/sa-business-owner-ai-prompts/sa-business-owner-prompts-v1.html" />
+  <meta property="og:title" content="The SA Business Owner AI Prompt Pack" />
+  <meta property="og:description" content="40 practical ChatGPT and Claude prompts for running a South African SME — quotes, invoices, payments, hiring, compliance, and growth. Instantly downloadable, one-time payment." />
+  <meta property="og:image" content="https://tlangelanibrian.github.io/digital-products/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The SA Business Owner AI Prompt Pack" />
+  <meta name="twitter:description" content="40 practical ChatGPT and Claude prompts for running a South African SME — quotes, invoices, payments, hiring, compliance, and growth. Instantly downloadable, one-time payment." />
+  <meta name="twitter:image" content="https://tlangelanibrian.github.io/digital-products/og-image.png" />
+  <title>The SA Business Owner AI Prompt Pack</title>
+  <style>
+    :root {
+      --ink: #1d1b18;
+      --muted: #6a6258;
+      --paper: #f7f1e8;
+      --card: #fffdfa;
+      --accent: #a95d2d;
+      --accent-dark: #6f3718;
+      --accent-soft: #ead3bf;
+      --border: #dfd1bf;
+      --green: #36543b;
+      --shadow: rgba(71, 49, 28, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, #f0dfcb 0, rgba(240, 223, 203, 0) 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f4ede3 100%);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 24px 96px;
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(22, 20, 18, 0.92), rgba(61, 43, 29, 0.94)),
+        linear-gradient(135deg, #281b13, #4a2d1a);
+      color: #fff8f0;
+      padding: 56px;
+      border-radius: 28px;
+      box-shadow: 0 28px 80px var(--shadow);
+      margin-bottom: 34px;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: auto -100px -100px auto;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(234, 211, 191, 0.22), rgba(234, 211, 191, 0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font: 700 12px/1.2 Arial, Helvetica, sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f8d9be;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 62px;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      font: 600 24px/1.3 Arial, Helvetica, sans-serif;
+      max-width: 680px;
+      color: #f2e1d0;
+      margin-bottom: 18px;
+    }
+
+    .tagline {
+      max-width: 660px;
+      font: 400 19px/1.6 Arial, Helvetica, sans-serif;
+      color: #faeee3;
+      margin-bottom: 28px;
+    }
+
+    .pillbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font: 600 14px/1.2 Arial, Helvetica, sans-serif;
+      color: #fff7ee;
+    }
+
+    .content {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 14px 44px rgba(68, 50, 28, 0.08);
+      padding: 40px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, #fffdfa, #fbf7f1);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    h2 {
+      margin: 40px 0 14px;
+      font-size: 34px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--accent-dark);
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 21px;
+      line-height: 1.3;
+      color: #2d241d;
+    }
+
+    p, li {
+      font-size: 17px;
+      color: #2e2924;
+    }
+
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 22px;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+      margin: 18px 0 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f9f1e8;
+      border: 1px solid #eadbc9;
+      font: 600 15px/1.4 Arial, Helvetica, sans-serif;
+    }
+
+    .section-card {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #fffdfa, #fcf8f3);
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font: 700 12px/1.2 Arial, Helvetica, sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .prompt {
+      margin: 14px 0 18px;
+      padding: 16px 18px;
+      background: #f6ede4;
+      border: 1px solid #e8d6c4;
+      border-left: 5px solid var(--accent);
+      border-radius: 14px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      color: #2b2119;
+    }
+
+    .note {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: #eef3ec;
+      border: 1px solid #d5e2d2;
+    }
+
+    .note strong {
+      color: var(--green);
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font: 400 14px/1.6 Arial, Helvetica, sans-serif;
+    }
+
+    @media (max-width: 860px) {
+      .cover { padding: 40px 28px; }
+      h1 { font-size: 44px; }
+      .subtitle { font-size: 21px; }
+      .content { padding: 28px 22px; }
+      .intro-grid, .toc { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+      .cover, .content {
+        box-shadow: none;
+      }
+      .content {
+        border: none;
+      }
+      h2, h3 {
+        page-break-after: avoid;
+      }
+      .section-card, .prompt, .panel, .note {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="cover">
+      <div class="eyebrow">South African SME Operating Pack</div>
+      <h1>The SA Business Owner AI Prompt Pack</h1>
+      <div class="subtitle">40 practical ChatGPT and Claude prompts for running a South African small business</div>
+      <div class="tagline">Quotes, invoices, payments, hiring, compliance, and growth — without the admin headache.</div>
+      <div class="pillbar">
+        <div class="pill">Price: R199</div>
+        <div class="pill">Sales & quoting • Money & payments • Hiring • Compliance • Growth</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="intro-grid">
+        <div class="panel">
+          <p><strong>This pack is for South African business owners who are drowning in admin.</strong></p>
+          <p>It gives you 40 practical prompts you can paste into ChatGPT or Claude to move faster on quotes, invoices, payment chasing, hiring, compliance, and growth — written in South African English and aware of local context like POPIA, BBBEE, and how small-business owners actually operate.</p>
+          <p>This is not legal or financial advice. It is an operator pack built to help you draft faster, stay professional, and stop letting admin eat your day.</p>
+        </div>
+        <div class="panel">
+          <p><strong>How to use it well</strong></p>
+          <ul>
+            <li>Start with the prompt closest to the task.</li>
+            <li>Paste in your real business context.</li>
+            <li>Replace bracketed placeholders like <code>[business name]</code>.</li>
+            <li>If the first draft is weak, ask for it shorter, firmer, or more commercial.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>What's inside</h2>
+      <ul class="toc">
+        <li>1. Sales &amp; Quoting</li>
+        <li>2. Money &amp; Payments</li>
+        <li>3. Suppliers &amp; Negotiation</li>
+        <li>4. Customer Care</li>
+        <li>5. Hiring &amp; People</li>
+        <li>6. Compliance &amp; Admin</li>
+        <li>7. Operations &amp; Growth</li>
+      </ul>
+
+      <div class="note"><strong>Use these like an operator, not a dreamer.</strong> The point is speed and professionalism in the boring, money-critical parts of your business — so you can focus on what only you can do.</div>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 1</div>
+        <h2>Sales &amp; Quoting</h2>
+
+        <h3>1. Quote Request Reply</h3>
+        <div class="prompt">Write a warm, professional reply to this customer enquiry and turn it into a quotation-ready response.
+
+Business: [business name]
+Offer: [product or service]
+Customer message: [paste enquiry]
+Turnaround time: [time]
+Price range: [range]
+
+Requirements:
+- Use South African English
+- Keep it concise
+- Confirm scope clearly
+- End with a direct next step</div>
+
+        <h3>2. Formal Quote Draft</h3>
+        <div class="prompt">Draft a customer-facing quotation message for the following:
+
+Business: [business name]
+Client: [client name]
+Scope: [scope]
+Price: [price]
+Valid until: [date]
+Lead time: [lead time]
+Exclusions: [exclusions]
+
+Requirements:
+- Clear headings
+- No legal waffle
+- Payment terms included
+- Tone: professional and confident</div>
+
+        <h3>3. Proposal Summary</h3>
+        <div class="prompt">Turn these rough notes into a one-page proposal summary for a South African SME client.
+
+Notes: [paste notes]
+Client goal: [goal]
+Timeline: [timeline]
+Budget: [budget]
+
+Requirements:
+- Problem
+- Solution
+- Deliverables
+- Timeline
+- Price
+- Strong closing paragraph</div>
+
+        <h3>4. Scope Clarifier</h3>
+        <div class="prompt">Create a discovery-question list I can send before quoting.
+
+Business type: [type]
+Service offered: [service]
+
+Requirements:
+- 10 sharp questions
+- Designed to prevent scope creep
+- Easy for clients to answer</div>
+
+        <h3>5. Upsell Offer Email</h3>
+        <div class="prompt">Write an upsell email to an existing customer.
+
+Current service: [service]
+Observed need: [need]
+Upsell offer: [offer]
+Price: [price]
+
+Requirements:
+- Consultative
+- Show business value
+- Strong CTA</div>
+
+        <h3>6. Follow-Up After No Decision</h3>
+        <div class="prompt">Write a follow-up for a prospect who went quiet after receiving a quote.
+
+Prospect: [name]
+Offer: [offer]
+Quote date: [date]
+
+Requirements:
+- One gentle version
+- One direct version
+- One breakup message</div>
+
+        <h3>7. Retainer Offer</h3>
+        <div class="prompt">Turn this service into a monthly retainer offer.
+
+Current one-off service: [service]
+Recurring need: [need]
+Monthly scope: [scope]
+Monthly price target: [price]
+
+Requirements:
+- Deliverables
+- Boundaries
+- Outcome-based positioning</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 2</div>
+        <h2>Money &amp; Payments</h2>
+
+        <h3>8. Invoice Cover Email</h3>
+        <div class="prompt">Write an invoice email for a South African client.
+
+Business: [business name]
+Invoice number: [number]
+Amount: [amount]
+Due date: [date]
+Work delivered: [summary]
+
+Requirements:
+- Short and polite
+- Mention POPIA-safe handling of contact details
+- Include a firm payment reminder line</div>
+
+        <h3>9. Overdue Payment Follow-Up</h3>
+        <div class="prompt">Write a payment follow-up email that is firm but still relationship-preserving.
+
+Client: [client name]
+Invoice number: [number]
+Amount due: [amount]
+Original due date: [date]
+Days overdue: [days]
+
+Requirements:
+- South African English
+- No aggression
+- Ask for payment date confirmation
+- Offer to resend invoice</div>
+
+        <h3>10. Final Payment Reminder</h3>
+        <div class="prompt">Write a final payment reminder before escalation.
+
+Client: [client name]
+Invoice number: [number]
+Amount due: [amount]
+Previous reminders sent: [dates]
+
+Requirements:
+- Calm and serious
+- Say services or deliverables may pause
+- Ask for immediate confirmation</div>
+
+        <h3>11. Debt Collection Call Script</h3>
+        <div class="prompt">Write a phone call script for following up unpaid invoices.
+
+Client type: [type]
+Amount due: [amount]
+Days overdue: [days]
+
+Requirements:
+- Calm
+- Direct
+- Ask for a payment date
+- Suitable for a South African small business owner</div>
+
+        <h3>12. Late-Paying Customer Policy</h3>
+        <div class="prompt">Draft a short internal policy for handling overdue customer payments.
+
+Business type: [type]
+Current pain: [pain]
+
+Requirements:
+- Reminder schedule
+- Escalation steps
+- Tone rules
+- When to pause work</div>
+
+        <h3>13. Price Increase Notice</h3>
+        <div class="prompt">Write a customer notice for a price increase.
+
+Current price: [price]
+New price: [price]
+Effective date: [date]
+Reason: [reason]
+
+Requirements:
+- Honest
+- Calm
+- Preserve goodwill
+- Encourage early renewal if useful</div>
+
+        <h3>14. Debt Settlement Proposal</h3>
+        <div class="prompt">Draft a debt settlement proposal to a supplier or creditor.
+
+Amount owed: [amount]
+Proposed plan: [plan]
+Reason for strain: [reason]
+
+Requirements:
+- Honest
+- Credible
+- Include payment dates</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 3</div>
+        <h2>Suppliers &amp; Negotiation</h2>
+
+        <h3>15. Supplier Price Negotiation</h3>
+        <div class="prompt">Write a negotiation email to a supplier asking for better pricing.
+
+Business: [business name]
+Supplier: [supplier name]
+Current spend: [amount]
+Requested concession: [discount, volume rate, terms]
+Reason: [reason]
+
+Requirements:
+- Professional, not desperate
+- Emphasise long-term relationship
+- Ask for a concrete revised offer</div>
+
+        <h3>16. Better Payment Terms Request</h3>
+        <div class="prompt">Write an email asking a supplier for improved payment terms.
+
+Current terms: [terms]
+Requested terms: [terms]
+Reason: [reason]
+
+Requirements:
+- Respectful
+- Commercially sensible
+- Mention growth and repeat business</div>
+
+        <h3>17. Late Delivery Complaint</h3>
+        <div class="prompt">Draft a supplier complaint about a late delivery.
+
+Order details: [details]
+Promised date: [date]
+Impact on business: [impact]
+
+Requirements:
+- Stay factual
+- Ask for corrective action
+- Ask for revised delivery commitment</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 4</div>
+        <h2>Customer Care</h2>
+
+        <h3>18. WhatsApp Follow-Up for Leads</h3>
+        <div class="prompt">Write three WhatsApp follow-up variants for a warm lead who asked about [service].
+
+Business: [business name]
+Lead name: [name]
+Original enquiry date: [date]
+Offer: [offer]
+
+Requirements:
+- Friendly, not needy
+- One short version
+- One more direct close
+- One check-in style version</div>
+
+        <h3>19. Customer Complaint Response</h3>
+        <div class="prompt">Write a response to a frustrated customer.
+
+Complaint: [paste]
+What happened: [summary]
+Resolution available: [resolution]
+
+Requirements:
+- Empathetic opening
+- Clear ownership
+- Specific next step
+- No robotic apology language</div>
+
+        <h3>20. Refund Refusal with Alternative</h3>
+        <div class="prompt">Write a refund refusal message that protects the relationship.
+
+Situation: [details]
+Why refund is not available: [reason]
+Alternative offered: [credit, redo, exchange]
+
+Requirements:
+- Clear but human
+- Avoid sounding defensive</div>
+
+        <h3>21. Testimonial Request</h3>
+        <div class="prompt">Write a message asking a happy customer for a testimonial.
+
+Customer: [name]
+Work done: [summary]
+Result: [result]
+
+Requirements:
+- Easy to answer
+- Offer 3 prompt questions they can reply to</div>
+
+        <h3>22. Google Review Request</h3>
+        <div class="prompt">Write a short follow-up asking a customer to leave a Google review.
+
+Business: [business name]
+Customer result: [result]
+
+Requirements:
+- Friendly
+- Not pushy
+- Include a simple thank-you line</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 5</div>
+        <h2>Hiring &amp; People</h2>
+
+        <h3>23. Job Ad Draft</h3>
+        <div class="prompt">Draft a practical job ad for a small South African business.
+
+Role: [role]
+Location: [location]
+Employment type: [full-time/part-time/contract]
+Must-have skills: [skills]
+Salary range: [range if sharing]
+
+Requirements:
+- Plain English
+- Responsibilities
+- Requirements
+- Application instructions</div>
+
+        <h3>24. Interview Question Pack</h3>
+        <div class="prompt">Create a focused interview question pack for this role:
+
+Role: [role]
+Level: [junior/mid/senior]
+Key risks in role: [risks]
+
+Requirements:
+- 12 questions
+- Include skill, judgment, and culture questions
+- Add what a strong answer sounds like</div>
+
+        <h3>25. Rejection Email</h3>
+        <div class="prompt">Write a respectful rejection email for an unsuccessful candidate.
+
+Role: [role]
+Candidate stage: [applied/interviewed/final]
+
+Requirements:
+- Kind
+- Brief
+- Keeps the door open if appropriate</div>
+
+        <h3>26. Contractor Brief</h3>
+        <div class="prompt">Turn these rough notes into a clean brief for a freelancer or contractor.
+
+Notes: [paste]
+Budget: [budget]
+Deadline: [deadline]
+
+Requirements:
+- Deliverables
+- Acceptance criteria
+- Deadline
+- Communication expectations</div>
+
+        <h3>27. Internal Memo</h3>
+        <div class="prompt">Turn these notes into a simple internal memo for staff.
+
+Notes: [paste]
+Change being announced: [change]
+Effective date: [date]
+
+Requirements:
+- Clear
+- No jargon
+- Explain what changes in practice</div>
+
+        <h3>28. Staff Warning Draft</h3>
+        <div class="prompt">Draft a fair, factual first written warning for an employee issue.
+
+Issue: [issue]
+Date of incident: [date]
+Previous discussion: [details]
+Expected improvement: [expectation]
+
+Requirements:
+- Factual
+- Measured
+- South African workplace context
+- No inflammatory wording</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 6</div>
+        <h2>Compliance &amp; Admin</h2>
+
+        <h3>29. POPIA Data Request Reply</h3>
+        <div class="prompt">Draft a reply to a customer asking what personal information we hold and why.
+
+Business: [business name]
+Data held: [summary]
+Purpose: [purpose]
+
+Requirements:
+- Simple language
+- POPIA-aware
+- No legal overkill</div>
+
+        <h3>30. Privacy Notice Draft</h3>
+        <div class="prompt">Write a plain-language privacy notice section for a small South African business website.
+
+Business type: [type]
+Data collected: [data]
+Use of data: [use]
+Contact email: [email]
+
+Requirements:
+- POPIA-aware
+- Easy to read
+- No fake legal certainty</div>
+
+        <h3>31. BBBEE Evidence Request</h3>
+        <div class="prompt">Write an email asking a supplier for their latest BBBEE certificate or affidavit.
+
+Supplier: [supplier]
+Reason: procurement records update
+
+Requirements:
+- Professional
+- Brief
+- Mention preferred format and deadline</div>
+
+        <h3>32. Tender Clarification Reply</h3>
+        <div class="prompt">Write a professional reply to a tender or procurement clarification request.
+
+Request: [paste]
+Context: [context]
+Answer points: [points]
+
+Requirements:
+- Formal
+- Clear
+- Easy to copy into a procurement email</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-kicker">Section 7</div>
+        <h2>Operations &amp; Growth</h2>
+
+        <h3>33. SOP Draft</h3>
+        <div class="prompt">Create a simple standard operating procedure for this recurring task:
+
+Task: [task]
+Tools used: [tools]
+Who owns it: [person]
+Failure risks: [risks]
+
+Requirements:
+- Purpose
+- Steps
+- Quality check
+- Escalation point</div>
+
+        <h3>34. Monthly Client Update</h3>
+        <div class="prompt">Write a monthly client update email from these raw notes.
+
+Notes: [paste]
+Wins: [wins]
+Issues: [issues]
+Next month focus: [focus]
+
+Requirements:
+- Clear headings
+- Professional tone
+- Make the work feel valuable</div>
+
+        <h3>35. Marketing Offer Sharpening</h3>
+        <div class="prompt">Improve this business offer so it is clearer, more specific, and easier to buy.
+
+Current offer: [paste]
+Target customer: [target]
+Pain solved: [pain]
+
+Requirements:
+- Rewrite headline
+- Rewrite promise
+- Add 3 proof points
+- Add a simple CTA</div>
+
+        <h3>36. Partnership Pitch</h3>
+        <div class="prompt">Write a partnership outreach email for a small South African business.
+
+Business: [business name]
+Potential partner: [partner]
+Why the fit makes sense: [reason]
+Offer: [offer]
+
+Requirements:
+- Commercially sharp
+- Specific
+- Easy to reply to</div>
+
+        <h3>37. Event Invite Message</h3>
+        <div class="prompt">Write an invitation message for customers or partners to attend this event.
+
+Event: [event]
+Date: [date]
+Location: [location]
+Why attend: [benefit]
+
+Requirements:
+- Email version
+- WhatsApp version</div>
+
+        <h3>38. Meeting Agenda Builder</h3>
+        <div class="prompt">Build a tight meeting agenda from these goals.
+
+Meeting type: [type]
+Goals: [goals]
+Attendees: [attendees]
+Time available: [minutes]
+
+Requirements:
+- Prioritised agenda
+- Time per item
+- Clear outcomes</div>
+
+        <h3>39. Business Plan Summary</h3>
+        <div class="prompt">Write a one-page business plan summary for this small business.
+
+Business idea: [idea]
+Target customer: [target]
+Revenue model: [model]
+Startup needs: [needs]
+
+Requirements:
+- Market
+- Offer
+- Go-to-market
+- Risks
+- First 90 days</div>
+
+        <h3>40. Board or Investor Update</h3>
+        <div class="prompt">Write a concise business update for a shareholder, advisor, or investor.
+
+Period: [period]
+Revenue: [revenue]
+Costs: [costs]
+Wins: [wins]
+Risks: [risks]
+Next priorities: [priorities]
+
+Requirements:
+- Sharp and factual
+- Show control of the business</div>
+      </section>
+
+      <div class="note"><strong>Final note:</strong> the value here is not just the prompts. It is the speed and professionalism they create in the boring, money-critical parts of your business — which frees you up to focus on what only you can do.</div>
+
+      <div class="footer">
+        <p>The SA Business Owner AI Prompt Pack</p>
+        <p>Prepared as a digital handbook for South African small business owners. Use the prompts, edit the inputs, save the outputs that work, and build your own templates from there.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
