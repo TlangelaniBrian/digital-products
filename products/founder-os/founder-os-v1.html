@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Founder OS — An AI Execution System for Solo Builders</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #121931;
+      --surface-2: #182140;
+      --text: #edf2ff;
+      --muted: #aab4d6;
+      --accent: #7c8cff;
+      --accent-2: #24d1a1;
+      --border: #273056;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #f6f8fc;
+      line-height: 1.65;
+    }
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 32px 96px;
+      color: #111827;
+    }
+    .cover {
+      background: linear-gradient(135deg, var(--bg), #101830 55%, #0f1428);
+      color: var(--text);
+      border-radius: 28px;
+      padding: 56px;
+      margin-bottom: 40px;
+      box-shadow: 0 30px 80px rgba(11, 16, 32, 0.25);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 64px;
+      line-height: 1;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+    .subtitle {
+      font-size: 24px;
+      color: #d7def8;
+      max-width: 640px;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+    .tagline {
+      font-size: 20px;
+      color: white;
+      margin-bottom: 32px;
+    }
+    .pricebar {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #e1e8ff;
+    }
+    .content {
+      background: white;
+      border: 1px solid #e7ecf5;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 12px 30px rgba(30, 41, 59, 0.06);
+    }
+    h2 {
+      font-size: 32px;
+      margin: 40px 0 16px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+    }
+    h3 {
+      font-size: 22px;
+      margin: 24px 0 10px;
+      color: #111827;
+    }
+    p, li { font-size: 17px; color: #1f2937; }
+    ul { padding-left: 22px; }
+    blockquote {
+      margin: 18px 0;
+      padding: 16px 18px;
+      background: #f5f7ff;
+      border-left: 4px solid var(--accent);
+      color: #1f2a44;
+      border-radius: 10px;
+    }
+    .rule {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+    .mini {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    @media print {
+      body { background: white; }
+      .page { max-width: none; padding: 0; }
+      .cover { box-shadow: none; }
+      .content { box-shadow: none; border: none; padding: 0; }
+      h2 { page-break-after: avoid; }
+      h3, p, ul, blockquote { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="cover">
+      <div class="eyebrow">AI Workflow Kit</div>
+      <h1>Founder OS</h1>
+      <div class="subtitle">An AI Execution System for Solo Builders</div>
+      <div class="tagline">Plan better. Delegate cleaner. Ship faster.</div>
+      <div class="pricebar">
+        <div class="pill">Launch price: $50</div>
+        <div class="pill">Regular price: $75</div>
+        <div class="pill">Templates • Workflows • Checklists • Prompt Systems</div>
+      </div>
+    </section>
+
+    <section class="content">
+      <p><strong>Most founders do not have an idea problem.</strong> They have an execution problem.</p>
+      <p>AI helps, but it also creates noise. You get scattered prompts, half-finished plans, bloated task lists, and too many false starts. Founder OS fixes that by giving you a simple operating system for planning, delegating, shipping, and reviewing work with AI.</p>
+      <p>This is not a generic prompt pack. It is a practical execution system for solo founders and tiny teams using Claude, ChatGPT, and coding agents to get real work done.</p>
+
+      <h2>1. How to Use Founder OS</h2>
+      <p>Use Founder OS in four layers:</p>
+      <ul>
+        <li><strong>Think:</strong> use AI to clarify the problem, user, outcome, and trade-offs.</li>
+        <li><strong>Plan:</strong> turn rough ideas into a small, sharp spec and a realistic task breakdown.</li>
+        <li><strong>Execute:</strong> delegate cleanly to AI, review outputs fast, and keep momentum.</li>
+        <li><strong>Learn:</strong> review what worked, log decisions, and tighten the system every week.</li>
+      </ul>
+      <div class="rule"><strong>Core rule:</strong> do not ask vague questions. Always provide context, constraints, required output, quality bar, and definition of done.</div>
+
+      <h2>2. Weekly Founder Operating Cadence</h2>
+      <h3>Monday — Direction</h3>
+      <p>Use Monday to set direction, not to pretend to be busy.</p>
+      <ul>
+        <li>What is the single most important outcome for this week?</li>
+        <li>What must ship?</li>
+        <li>What can be ignored?</li>
+        <li>What will kill momentum if left unresolved?</li>
+      </ul>
+      <blockquote>Act as a startup operator. Based on these projects, help me choose the single most important outcome for this week. Break it into the smallest meaningful milestones, identify the likely blockers, and recommend the cleanest order of execution.</blockquote>
+
+      <h3>Tuesday to Thursday — Build</h3>
+      <ul>
+        <li>build the core milestone</li>
+        <li>use AI for breakdowns, drafting, debugging, and synthesis</li>
+        <li>capture decisions as they happen</li>
+        <li>resist shiny work</li>
+      </ul>
+
+      <h3>Friday — Review</h3>
+      <ul>
+        <li>what shipped</li>
+        <li>what got stuck</li>
+        <li>what created drag</li>
+        <li>what should be stopped</li>
+        <li>what becomes next week’s main outcome</li>
+      </ul>
+      <blockquote>Review this week’s work log and identify: 1) what moved the business forward, 2) what created noise, 3) what should be stopped, and 4) the highest-leverage focus for next week.</blockquote>
+
+      <h2>3. Idea-to-PRD Workflow</h2>
+      <h3>Step 1 — Capture the idea</h3>
+      <ul>
+        <li>idea</li>
+        <li>target user</li>
+        <li>problem</li>
+        <li>why now</li>
+        <li>likely value</li>
+        <li>biggest risk</li>
+      </ul>
+      <h3>Step 2 — Clarify with AI</h3>
+      <blockquote>Turn this rough startup idea into a crisp product concept. Identify the target user, core pain, current alternatives, value proposition, must-have feature set, and biggest product risk.</blockquote>
+      <h3>Step 3 — Write a mini-PRD</h3>
+      <ul>
+        <li><strong>Problem statement</strong></li>
+        <li><strong>Target user</strong></li>
+        <li><strong>Desired outcome</strong></li>
+        <li><strong>Scope</strong></li>
+        <li><strong>Non-goals</strong></li>
+        <li><strong>Success metric</strong></li>
+        <li><strong>Release standard</strong></li>
+      </ul>
+      <div class="rule"><strong>Rule:</strong> if the PRD still sounds clever but vague, it is not ready.</div>
+
+      <h2>4. Feature Breakdown Workflow</h2>
+      <p>Once the PRD is clear, break work into frontend, backend, data, integrations, testing, and launch tasks.</p>
+      <blockquote>You are a senior product engineer. Break this feature into implementation tasks grouped by frontend, backend, data, integrations, testing, and release. Highlight dependencies, risks, and the smallest shippable version.</blockquote>
+      <div class="rule"><strong>Force every time:</strong> dependencies, risks, smallest shippable version, and what can wait.</div>
+
+      <h2>5. AI Delegation System</h2>
+      <p>Most people waste AI by delegating badly.</p>
+      <p>Do not say “build this”, “help me with this”, or “fix this bug”. Use a proper delegation frame.</p>
+      <ul>
+        <li><strong>Objective:</strong> what needs to happen?</li>
+        <li><strong>Context:</strong> what does the AI need to know?</li>
+        <li><strong>Constraints:</strong> what is out of scope, fixed, or non-negotiable?</li>
+        <li><strong>Output required:</strong> plan, code, table, checklist, draft?</li>
+        <li><strong>Definition of done:</strong> what must be true for this to count as complete?</li>
+      </ul>
+      <blockquote>Objective: [insert objective]
+
+Context: [insert context]
+
+Constraints: [insert constraints]
+
+Output required: [insert output type]
+
+Definition of done: [insert done condition]</blockquote>
+
+      <h2>6. Daily Execution Loop</h2>
+      <h3>Morning</h3>
+      <p>Define one meaningful outcome for the day.</p>
+      <blockquote>Based on these open tasks, help me choose the highest-leverage task for today, define the fastest path to done, and identify what should be delegated to AI.</blockquote>
+      <h3>During the day</h3>
+      <ul>
+        <li>delegate narrowly</li>
+        <li>review outputs quickly</li>
+        <li>log decisions immediately</li>
+        <li>stop reopening solved questions</li>
+      </ul>
+      <h3>End of day</h3>
+      <ul>
+        <li>what moved</li>
+        <li>what stalled</li>
+        <li>what gets picked up tomorrow</li>
+      </ul>
+      <div class="rule"><strong>Rule:</strong> a good day is not “I touched many things”. A good day is “one important thing moved materially”.</div>
+
+      <h2>7. Bug Triage Workflow</h2>
+      <ul>
+        <li><strong>Bug summary</strong></li>
+        <li><strong>Severity</strong></li>
+        <li><strong>Affected user flow</strong></li>
+        <li><strong>Reproduction steps</strong></li>
+        <li><strong>Suspected root cause</strong></li>
+        <li><strong>Workaround</strong></li>
+        <li><strong>Fix owner</strong></li>
+        <li><strong>Release impact</strong></li>
+      </ul>
+      <blockquote>Given this bug report, create a clean triage summary with severity, likely root cause, investigation steps, workaround options, and the fastest safe fix path.</blockquote>
+      <p><strong>Severity rubric:</strong> P0 = broken core flow; P1 = major pain with workaround; P2 = annoying but tolerable; P3 = cosmetic.</p>
+
+      <h2>8. Launch Readiness Checklist</h2>
+      <ul>
+        <li>the core user flow works</li>
+        <li>obvious failures are visible</li>
+        <li>analytics are in place</li>
+        <li>copy is acceptable</li>
+        <li>known issues are documented</li>
+        <li>support path exists</li>
+        <li>rollback or fallback exists</li>
+      </ul>
+      <blockquote>Create a lean launch readiness checklist for this feature. Group items into product, engineering, analytics, support, and risk. Keep only what is necessary for a credible MVP release.</blockquote>
+      <div class="rule"><strong>Rule:</strong> ship when the product is usable and safe, not when it is emotionally perfect.</div>
+
+      <h2>9. Decision Log</h2>
+      <p>Founders forget why decisions were made, then repeat old debates.</p>
+      <ul>
+        <li><strong>Date</strong></li>
+        <li><strong>Decision</strong></li>
+        <li><strong>Why</strong></li>
+        <li><strong>Alternatives rejected</strong></li>
+        <li><strong>Expected upside</strong></li>
+        <li><strong>Known risk</strong></li>
+        <li><strong>Review date</strong></li>
+      </ul>
+
+      <h2>10. Post-Mortem Template</h2>
+      <ul>
+        <li>what happened</li>
+        <li>what went well</li>
+        <li>what went badly</li>
+        <li>what surprised us</li>
+        <li>what should change</li>
+        <li>what gets documented</li>
+      </ul>
+      <blockquote>Turn these raw notes into a concise post-mortem with wins, failures, surprises, lessons, and process changes.</blockquote>
+
+      <h2>11. Example Workflow in Practice</h2>
+      <ol>
+        <li>Capture the idea</li>
+        <li>Clarify the product with AI</li>
+        <li>Write the mini-PRD</li>
+        <li>Break the feature set into smallest shippable tasks</li>
+        <li>Delegate narrow chunks to AI</li>
+        <li>Run the daily execution loop</li>
+        <li>Triage bugs or friction fast</li>
+        <li>Use the launch checklist</li>
+        <li>Log key decisions</li>
+        <li>Run a post-mortem after launch</li>
+      </ol>
+
+      <h2>12. Quick-Start Pack</h2>
+      <p>If you only use five things from this product, use these:</p>
+      <ul>
+        <li>weekly founder review</li>
+        <li>mini-PRD template</li>
+        <li>feature breakdown workflow</li>
+        <li>delegation template</li>
+        <li>launch checklist</li>
+      </ul>
+      <p>Used together, they clean up most founder execution mess very quickly.</p>
+
+      <h2>Closing Note</h2>
+      <p>Most founders do not need more inspiration. They need a cleaner operating rhythm.</p>
+      <p><strong>Founder OS gives you one.</strong></p>
+    </section>
+  </div>
+</body>
+</html>
